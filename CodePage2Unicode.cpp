@@ -7,8 +7,17 @@
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
-// #include <codecvt>
+#ifdef __has_include
+#   if __has_include(<codecvt>)
+#       include <codecvt>
+#   endif
+#endif
 #include <cmath>
+#ifdef __has_include
+#   if __has_include(<cuchar>)
+#       include <cuchar>
+#   endif
+#endif
 #include <cwchar>
 #include <exception>
 #include <fstream>
@@ -23,12 +32,12 @@
 #include <string>
 #include <typeinfo>
 #include <vector>
+
 #if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
 #include <Windows.h>
 #endif
 
 #include "CodePage2Unicode.h"
-#include "CompilerInfo.h"
 
 using namespace std;
 

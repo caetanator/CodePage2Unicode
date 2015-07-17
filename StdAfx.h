@@ -11,7 +11,7 @@
 
 #if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
     // Windows Specific
-#   include "Windows/TargetVer.h"
+//#   include "Windows/TargetVer.h"
     // Windows Header Files
 #   include <tchar.h>
 #   include <windows.h>

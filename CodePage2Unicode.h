@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include "cpp_feature.h"
+
 using namespace std;
 
 
@@ -31,7 +33,7 @@ using namespace std;
  * @version	%I%, %G%
  * @since	1.0
  */
-#if (__cplusplus >= 201103L) || (__cpp_enumerator_attributes)
+#if __cpp_strong_enums
     // C++11 standard compliment
     enum class CodePage : unsigned int
 #else
