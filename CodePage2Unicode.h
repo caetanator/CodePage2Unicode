@@ -7,23 +7,10 @@
 
 #pragma once
 
-#include "cpp_feature.h"
+#include "StdAfx.h"
 
 using namespace std;
 
-
-#if !defined(_TCHAR)
-#   if defined(_UNICODE)
-        // Unicode code point unit (UCS-2, UCS-4, UTF-16, UTF-32)
-        typedef wchar_t _TCHAR;
-#   elif defined(_MBCS)
-        // Multi Byte Character String unit
-        typedef char _TCHAR;
-#   else
-        // ASCII character and UTF-8 code point unit
-        typedef char _TCHAR;
-#   endif
-#endif
 
 /**
  * Enumeration width the 8-bit code pages that can be used for conversion

@@ -8,19 +8,11 @@
 #include <cassert>
 #include <cctype>
 #include <cmath>
-#ifdef __has_include
-#   if __has_include(<codecvt>)
-#       include <codecvt>
-#   endif
-#endif
+
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
-#ifdef __has_include
-#   if __has_include(<cuchar>)
-#       include <cuchar>
-#   endif
-#endif
+
 #include <cwchar>
 #include <exception>
 #include <fstream>
