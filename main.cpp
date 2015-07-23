@@ -1,35 +1,36 @@
+/**
+ * main.h
+ *
+ * ABSTRACT
+ *  Test program of the CodePage2Unicode API and objects that convert strings from ASCII to Unicode and vice versa.
+ *
+ * CONTACTS
+ *  E-mail regarding any portion of the "CodePage2Unicode" project:
+ *      José Caetano Silva, jcaetano@users.sourceforge.net
+ *
+ * COPYRIGHT
+ *  This file is distributed under the terms of the GNU General Public
+ *  License (GPL) v3. Copies of the GPL can be obtained from:
+ *      ftp://prep.ai.mit.edu/pub/gnu/GPL
+ *  Each contributing author retains all rights to their own work.
+ *
+ *  (C) 20011 - 20015   José Caetano Silva
+ *
+ * HISTORY
+ *  2013-01-11: Created.
+ *  2015-07-17: Fixed typos.
+ */
+ 
+// http://www.tutorialspoint.com/compile_cpp11_online.php
 // http://www.tutorialspoint.com/compile_cpp11_online.php
 // http://kanjidict.stc.cx/recode.php
 // http://www.webutils.pl/index.php?idx=conv
 // http://codepage-encoding.online-domain-tools.com/
-// ================================
 
-#include <algorithm>
-#include <cassert>
-#include <cctype>
-#include <cmath>
-
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-
-#include <cwchar>
-#include <exception>
-#include <fstream>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <locale>
-#include <map>
-#include <new>
-#include <sstream>
-#include <stdexcept>
-#include <string>
-#include <typeinfo>
-#include <vector>
+#include "StdAfx.h"
 
 #include "CodePage2Unicode.h"
-#include "CompilerInfo.h"
+
 
 using namespace std;
 

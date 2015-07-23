@@ -1,41 +1,29 @@
+/**
+ * CodePage2Unicode.cpp
+ *
+ * ABSTRACT
+ *  Implementation of the CodePage2Unicode API and objects that convert strings from ASCII to Unicode and vice versa.
+ *
+ * CONTACTS
+ *  E-mail regarding any portion of the "CodePage2Unicode" project:
+ *      José Caetano Silva, jcaetano@users.sourceforge.net
+ *
+ * COPYRIGHT
+ *  This file is distributed under the terms of the GNU General Public
+ *  License (GPL) v3. Copies of the GPL can be obtained from:
+ *      ftp://prep.ai.mit.edu/pub/gnu/GPL
+ *  Each contributing author retains all rights to their own work.
+ *
+ *  (C) 20011 - 20015   José Caetano Silva
+ *
+ * HISTORY
+ *  2013-01-11: Created.
+ *  2015-07-17: Fixed typos.
+ */
+ 
 // http://www.tutorialspoint.com/compile_cpp11_online.php
-// ================================
 
-#include <algorithm>
-#include <cassert>
-#include <cctype>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#ifdef __has_include
-#   if __has_include(<codecvt>)
-#       include <codecvt>
-#   endif
-#endif
-#include <cmath>
-#ifdef __has_include
-#   if __has_include(<cuchar>)
-#       include <cuchar>
-#   endif
-#endif
-#include <cwchar>
-#include <exception>
-#include <fstream>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <locale>
-#include <map>
-#include <new>
-#include <sstream>
-#include <stdexcept>
-#include <string>
-#include <typeinfo>
-#include <vector>
-
-#if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
-#include <Windows.h>
-#endif
+#include "StdAfx.h"
 
 #include "CodePage2Unicode.h"
 
