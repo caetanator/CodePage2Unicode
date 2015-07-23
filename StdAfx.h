@@ -43,10 +43,10 @@
 	// * The _USE_MATH_DEFINES enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for MS VC++
 #	define _USE_MATH_DEFINES
 #elif defined(__GNUC__ )
-	// * The _BSD_SOURCE enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for GNU GCC
-#	ifndef _BSD_SOURCE
-#		define _BSD_SOURCE
-#		define ___MY_ERRASE_BSD_SOURCE
+	// * The _DEFAULT_SOURCE enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for GNU GCC
+#	ifndef _DEFAULT_SOURCE
+#		define _DEFAULT_SOURCE
+#		define ___MY_ERRASE_DEFAULT_SOURCE
 #	endif
 // * The _GNU_SOURCE enables non ANSI C/C++ defines like M_PIl in <math.h> and <cmath> for GNU GCC
 #	ifndef _GNU_SOURCE
@@ -114,9 +114,9 @@
 #endif      // __cplusplus
 
 // Cleanup
-#ifdef ___MY_ERRASE_BSD_SOURCE
-#   undef _BSD_SOURCE
-#   undef ___MY_ERRASE_BSD_SOURCE
+#ifdef ___MY_ERRASE_DEFAULT_SOURCE
+#   undef _DEFAULT_SOURCE
+#   undef ___MY_ERRASE_DEFAULT_SOURCE
 #endif
 #ifdef ___MY_ERRASE_GNU_SOURCE
 #   undef _GNU_SOURCE
