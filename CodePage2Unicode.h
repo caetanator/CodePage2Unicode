@@ -126,19 +126,19 @@ using namespace std;
 	 */
 	UCS_4 = 12001, 
 	/**
-	 *  UTF-7: Unicode (7-bits, 1 to 6 bytes Unicode Transformation Format)
+	 *  UTF-7: Unicode (7-bit, 1 to 6 bytes Unicode Transformation Format)
 	 */
 	UTF_7 = 65000, 
 	/**
-	 *  UTF-8: Unicode (8-bits, 1 to 6 bytes Unicode Transformation Format)
+	 *  UTF-8: Unicode (8-bit, 1 to 6 bytes Unicode Transformation Format)
 	 */
 	UTF_8 = 65001, 
 	/**
-	 *  UTF-16: Unicode (16-bits, 2 or 4 bytes Unicode Transformation Format)
+	 *  UTF-16: Unicode (16-bit, 2 or 4 bytes Unicode Transformation Format)
 	 */
 	UTF_16 = 1200, 
 	/**
-	 *  UTF-32: Unicode (32-bits, 4 bytes Unicode Transformation Format)
+	 *  UTF-32: Unicode (32-bit, 4 bytes Unicode Transformation Format)
 	 */
 	UTF_32 = 12000
 };
@@ -201,7 +201,7 @@ private:
     /* Conversion Constants */
 
     /**
-     * UTF-8 half shifting by 6-bits. Used for conversion to/from UTF-32.
+     * UTF-8 half shifting by 6-bit. Used for conversion to/from UTF-32.
      */
     static const unsigned int UTF8_HALF_SHIFT = 6;
 
@@ -255,7 +255,7 @@ private:
     static const char UTF8_NEXT_MASK = (char)0x3FU; // 00111111
 
     /**
-     * UTF-16 half shifting by 10 bits. Used for conversion to/from UTF-32.
+     * UTF-16 half shifting by 10-bit. Used for conversion to/from UTF-32.
      */
     static const unsigned int UTF16_HALF_SHIFT = 10;
     /**
@@ -1604,7 +1604,7 @@ public:
 
     /**
      * Checks if the supplied UTF-32 code unit is a surrogate.<br />
-     * As Unicode 6.3, there aren't UTF-32 surrogates because the higher code point in use is 21-bits.
+     * As Unicode 6.3, there aren't UTF-32 surrogates because the higher code point in use is 21-bit.
      *
      * @author	Jos&eacute; Caetano Silva
      * @version	%I%, %G%
