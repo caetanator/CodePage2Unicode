@@ -1,4 +1,4 @@
-/**
+﻿/**
  * CodePage2Unicode.cpp
  *
  * ABSTRACT

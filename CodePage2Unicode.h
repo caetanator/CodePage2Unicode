@@ -1,4 +1,4 @@
-/**
+﻿/**
  * CodePage2Unicode.h
  *
  * ABSTRACT
@@ -41,7 +41,7 @@ using namespace std;
  * @version	%I%, %G%
  * @since	1.0
  */
-#if __cpp_strong_enums
+#ifdef __cpp_strong_enums
     // C++11 standard compliment
     enum class CodePage : unsigned int
 #else

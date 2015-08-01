@@ -1,4 +1,4 @@
-/**
+﻿/**
  * StdAfx.h
  *
  * ABSTRACT
@@ -42,7 +42,7 @@
 #if _MSC_VER
 	// * The _USE_MATH_DEFINES enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for MS VC++
 #	define _USE_MATH_DEFINES
-#elif defined(__GNUC__ )
+#elif defined(__GNUC__)
 	// * The _DEFAULT_SOURCE enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for GNU GCC
 #	ifndef _DEFAULT_SOURCE
 #		define _DEFAULT_SOURCE
@@ -60,8 +60,10 @@
 #include <algorithm>
 #include <cassert>
 #include <cctype>
+#include <cstdint>
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
 #ifdef __has_include
 #   if __has_include(<codecvt>)
 #       include <codecvt>

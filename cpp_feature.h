@@ -1,4 +1,4 @@
-/* has_feature.h
+﻿/* has_feature.h
 Provides SG-10 feature checking for all C++ compilers
 (C) 2014 Niall Douglas http://www.nedprod.com/
 File Created: Nov 2014

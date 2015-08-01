@@ -1,4 +1,4 @@
-
+﻿
 #ifndef _STRINGCONVERTION_H_
 #define _STRINGCONVERTION_H_
 

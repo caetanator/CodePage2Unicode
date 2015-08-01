@@ -1,4 +1,4 @@
-/**
+﻿/**
  * main.h
  *
  * ABSTRACT
@@ -91,7 +91,7 @@ static const char aStrWin1253[]  =    { '\xC5', '\xEB', '\xEB', '\xDC', '\xE4', 
 static const char aStrISO_8859_7[]  = { '\xC5', '\xEB', '\xEB', '\xDC', '\xE4', '\xE1', '\x20', '\x28', '\x47', '\x72', '\x65', '\x65', '\x63', '\x65', '\x29', '\x20', '\xDD', '\xEA', '\xE4', '\xEF', '\xF3', '\xE7', '\x20', '\xCA', '\xF9', '\xED', '\xF3', '\xF4', '\xE1', '\xED', '\xF4', '\xDF', '\xED', '\xEF', '\xF2', '\x20', '\xD0', '\xEF', '\xEB', '\xF5', '\xF7', '\xF1', '\xFC', '\xED', '\xE7', '\xF2', '\x20', '\xA3', '\xA4', '\0' };
 
 // Unicode encoded in UTF-8
-#if !defined(_WIN32)
+#ifdef __cpp_unicode_literals
 static const char utf8StrUTF_8[] = u8"ãõñäöáéíóúàèìòùâêîôûç ÃÕÑÄÖÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÇ $£€¤ π";
 #else
 static const char utf8StrUTF_8[]  = { '\xC3', '\xA3', '\xC3', '\xB5', '\xC3', '\xB1', '\xC3', '\xA4', '\xC3', '\xB6', '\xC3', '\xA1', '\xC3', '\xA9', '\xC3', '\xAD', '\xC3', '\xB3', '\xC3', '\xBA', '\xC3', '\xA0', 
@@ -101,7 +101,7 @@ static const char utf8StrUTF_8[]  = { '\xC3', '\xA3', '\xC3', '\xB5', '\xC3', '\
 									  '\xA3', '\xE2', '\x82', '\xAC', '\xC2', '\xA4', '\x20', '\xCF', '\x80', '\0' };
 #endif
 // Unicode encoded in UTF-8 + BOM
-#if !defined(_WIN32)
+#ifdef __cpp_unicode_literals
 static const char utf8StrBomUTF_8[] = u8"\xEF\xBB\xBFãõñäöáéíóúàèìòùâêîôûç ÃÕÑÄÖÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÇ $£€¤ π";
 #else
 static const char utf8StrBomUTF_8[]  = {  '\xEF', '\xBB', '\xBF', 
@@ -112,7 +112,7 @@ static const char utf8StrBomUTF_8[]  = {  '\xEF', '\xBB', '\xBF',
 									  '\xA3', '\xE2', '\x82', '\xAC', '\xC2', '\xA4', '\x20', '\xCF', '\x80', '\0' };
 #endif
 // Unicode encoded in UTF-16LE
-#if !defined(_WIN32)
+#ifdef __cpp_unicode_literals
 static const char16_t utf16StrUTF16LE[] = u"ãõñäöáéíóúàèìòùâêîôûç ÃÕÑÄÖÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÇ $£€¤ π";
 #else
 static const char16_t utf16StrUTF16LE[] = { 0x00E3U, 0x00F5U, 0x00F1U, 0x00E4U, 0x00F6U, 0x00E1U, 0x00E9U, 0x00EDU, 0x00F3U, 0x00FAU, 0x00E0U, 0x00E8U, 0x00ECU, 0x00F2U, 
@@ -121,7 +121,7 @@ static const char16_t utf16StrUTF16LE[] = { 0x00E3U, 0x00F5U, 0x00F1U, 0x00E4U, 
 											0x00C7U, 0x0020U, 0x0024U, 0x00A3U, 0x20ACU, 0x00A4U, 0x0020U, 0x03C0U, 0x0000 };
 #endif
 // Unicode encoded in UTF-32LE
-#if !defined(_WIN32)
+#ifdef __cpp_unicode_literals
 static const char32_t utf32StrUTF32LE[] = U"ãõñäöáéíóúàèìòùâêîôûç ÃÕÑÄÖÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÇ $£€¤ π";
 #else
 static const char32_t utf32StrUTF32LE[] = { 0x000000E3UL, 0x000000F5UL, 0x000000F1UL, 0x000000E4UL, 0x000000F6UL, 0x000000E1UL, 0x000000E9UL, 0x000000EDUL, 0x000000F3UL, 
@@ -133,7 +133,7 @@ static const char32_t utf32StrUTF32LE[] = { 0x000000E3UL, 0x000000F5UL, 0x000000
 #endif
 // UTF-32 emojis
 // "👎😃🐁𐀀𐀟𐀏ᇿ😜👍"
-#if !defined(_WIN32)
+#ifdef __cpp_unicode_literals
 static const char32_t utf32StrEmojis[] = U"\U0001F44E\U0001F603\U0001F401\U00010000\U0001001F\U0001000F\U000011FF\U0001F61C\U0001F44D";
 #else
 static const char32_t utf32StrEmojis[] = { 0x0001F44EUL, 0x0001F603UL, 0x0001F401UL, 0x00010000UL, 0x0001001FUL, 0x0001000FUL, 0x000011FFUL, 0x0001F61CUL, 0x0001F44DUL, 0x00000000 };
@@ -143,6 +143,7 @@ int main(void)
 {
     // Set the locale of the console to the user default
 #if defined(_WIN32)
+	//::_setmode(::_fileno(stdout), _O_U16TEXT);
 	::setlocale(LC_CTYPE, "");
 	locale objNewLocale(locale(""));
 #else
@@ -272,7 +273,11 @@ int main(void)
 	utf32Str = objString->convertStringWide_to_StringUtf32(wideString);
 	wcout << L"\tWide Char to UTF-32: " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
 	narrowString = objString->convertStringWide_to_StringNarrow(strOriginal);
+#if defined(_WIN32)
 	wcout << L"\tWide Char to Narrow: " << narrowString.c_str() << endl;
+#else
+    wcout << L"\tWide Char to Narrow: " << objString->convertStringUtf8_to_StringWide(narrowString) << endl;
+#endif
 #if defined(_WIN32)
 	wideString = objString->convertStringNarrow_to_StringWide(strWin1252);
 #else
