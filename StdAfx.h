@@ -153,5 +153,6 @@
 #include "cpp_feature.h"
 #include "CompilerInfo.h"
 #include "CompilerConfig.h"
+#include "CompilerEnvironment.h"
 
 #endif // __STDAFX_H__

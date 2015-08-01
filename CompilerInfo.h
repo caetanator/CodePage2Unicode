@@ -223,31 +223,6 @@
 #   define __COMPILER_VERSION_BUILD (_MSC_FULL_VER - (_MSC_VER * 100000))
 #   define __COMPILER_VERSION_PATCH (_MSC_BUILD)
 #   define __COMPILER_VERSION       (_MSC_FULL_VER)
-#   if _MSC_VER <= 1100
-        // Microsoft Visual C++ 5.0 or lower
-#   elif _MSC_VER <= 1200
-        // Microsoft Visual C++ 6.0 or lower
-#   elif _MSC_VER <= 1300
-        // Microsoft Visual C++ 7.0 or lower
-#   elif _MSC_VER <= 1310
-        // Microsoft Visual C++ 2003 (7.1) or lower
-#   elif _MSC_VER <= 1400
-        // Microsoft Visual C++ 2005 (8.0) or lower
-#   elif _MSC_VER <= 1500
-        // Microsoft Visual C++ 2008 (9.0) or lower
-#   elif _MSC_VER <= 1600
-        // Microsoft Visual C++ 2010 (10.0) or lower
-#   elif _MSC_VER <= 1700
-        // Microsoft Visual C++ 2012 (11.0) or lower
-#   elif _MSC_VER <= 1800
-        // Microsoft Visual C++ 2013 (12.0) or lower
-#   elif _MSC_VER <= 1900
-        // Microsoft Visual C++ 2015 (13.0) or lower
-#   endif
-#   if (_MSC_VER < 1600)
-        // Microsoft Visual C++ 2008 (9.0) or lower
-#       error "Visual C++ < 2010 (< 10.0) will not be able to compile this code because of missing C++11 features."
-#   endif
 #elif defined(__MINGW64__)
     // MinGW 64-bit compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_MINGW
@@ -256,10 +231,6 @@
 #   define __COMPILER_VERSION_BUILD (0)
 #   define __COMPILER_VERSION_PATCH (__MINGW64_VERSION_PATCHLEVEL)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
-#   if (__MINGW32_VERSION_MAJOR < 4) || ((__COMPILER_VERSION_MAJOR == 4) && (__MINGW64_VERSION_MINOR < 6))
-        // MINGW64 4.6 or lower
-#        error "MinGW64 version < 4.6 will not be able to compile this code because of missing C++11 features."
-#   endif
 #elif defined(__MINGW32__)
     // MinGW 32-bit compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_MINGW
@@ -268,10 +239,6 @@
 #   define __COMPILER_VERSION_BUILD (0)
 #   define __COMPILER_VERSION_PATCH (__MINGW32_VERSION_PATCHLEVEL)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
-#   if (__MINGW32_VERSION_MAJOR < 4) || ((__MINGW32_VERSION_MAJOR == 4) && (__MINGW32_VERSION_MINOR < 6))
-        // MINGW6432 4.6 or lower
-#        error "MinGW version < 4.6 will not be able to compile this code because of missing C++11 features."
-#   endif
 #elif defined(__clang__)
     // CLang compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_CLANG
@@ -280,10 +247,6 @@
 #   define __COMPILER_VERSION_BUILD (0)
 #   define __COMPILER_VERSION_PATCH (__clang_patch__)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
-#   if (__clang_major__ < 3) || ((__clang_major__ == 3) && (__clang_minor__ < 1))
-        // CLang 3.1 or lower
-#        error "CLang version < 3.1 will not be able to compile this code because of missing C++11 features."
-#   endif
 #elif defined(__GNUC__)
     // GCC compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_GCC
@@ -292,10 +255,6 @@
 #   define __COMPILER_VERSION_BUILD (0)
 #   define __COMPILER_VERSION_PATCH (__GNUC_PATCHLEVEL__)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
-#   if (__GNUC__ < 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ < 6))
-        // GCC 4.6 or lower
-#        error "GCC version < 4.6 will not be able to compile this code because of missing C++11 features."
-#   endif
 #else
     // Unknown compiler
 #   define __COMPILER_TYPE          __COMPILER_TYPE_UNKNOWN
@@ -304,7 +263,6 @@
 #   define __COMPILER_VERSION_BUILD (0)
 #   define __COMPILER_VERSION_PATCH (0)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
-#   error "Unknown compiler will not be able to compile this code because of missing C++11 features."
 #endif
 
 /* Detect the CPU byte order */
