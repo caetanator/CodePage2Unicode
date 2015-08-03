@@ -151,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="..\CodePage2Unicode.h" />
     <ClInclude Include="..\CompilerConfig.h" />
+    <ClInclude Include="..\CompilerEnvironment.h" />
     <ClInclude Include="..\CompilerInfo.h" />
     <ClInclude Include="..\cpp_feature.h" />
     <ClInclude Include="..\StdAfx.h" />

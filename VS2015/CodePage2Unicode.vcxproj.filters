@@ -36,6 +36,9 @@
     <ClInclude Include="..\cpp_feature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\CompilerEnvironment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\StdAfx.cpp">
