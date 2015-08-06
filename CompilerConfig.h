@@ -2,7 +2,7 @@
  * CompilerConfig.h
  *
  * ABSTRACT
- *  Include file for  fixing compiler related diferences.
+ *  Include file for  fixing compiler related differences.
  *
  * CONTACTS
  *  E-mail regarding any portion of the "CodePage2Unicode" project:
@@ -226,6 +226,21 @@
 	#define _tclog      std::wclog
 	// Standard C++ wide character strings
 	#define _tstring    std::wstring
+#elif defined(_MBCS)
+	// Standard C++ Multi-Byte character streams
+	#define _tistream	std::istream
+	#define _tostream	std::ostream
+	#define _tifstream	std::ifstream
+    #define _tofstream	std::ofstream
+	#define _tistringstream	std::istringstream
+	#define _tostringstream	std::ostringstream
+	// Standard C++ Multi-Byte character console streams
+	#define _tcin       std::cin
+	#define _tcout      std::cout
+	#define _tcerr      std::cerr
+	#define _tclog      std::clog
+	// Standard C++ Multi-Byte character strings
+	#define _tstring    std::string
 #else
 	// Standard C++ narrow character streams
 	#define _tistream	std::istream
