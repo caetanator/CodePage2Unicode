@@ -1,5 +1,5 @@
 ﻿/**
- * main.h
+ * main.cpp
  *
  * ABSTRACT
  *  Test program of the CodePage2Unicode API and objects that convert strings from ASCII to Unicode and vice versa.
@@ -71,7 +71,7 @@ static const char aStrISO_8859_15[] = { '\xE3', '\xF5', '\xF1', '\xE4', '\xF6', 
 // Non ASCII standard controls
 //                 "◄↕‼¶" <- MS-DOS Controls
 //                 "⌘⇧⌥⎈" <- Mac OS Controls
-static const char aControls0[] = { 0x11U, 0x12U, 0x13U, 0x14U, 0x00 };
+static const char aControls0[] = { '\x11', '\x12', '\x13', '\x14', '\0' };
 
 // ASCII Greek
 // IBM737; OEM Greek; Greek (MS-DOS)
@@ -230,29 +230,55 @@ int main(void)
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strISO_8859_15, CodePage::ISO_8859_15);
 	wcout << L"\tISO 8859-15:  " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
 
-#if !defined(_WIN32)
 	wcout << endl;
 	wcout << L"7-bit ASCII Controls Narrow to UTF-32 Conversions: " << endl;
 	string strControls0((char *)aControls0);
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strControls0, CodePage::DOS_CP850, true);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"MS-DOS Controls", MB_OK | MB_TOPMOST, 0);
+#else	
 	wcout << L"\tMS-DOS Controls: " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
+#endif
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strControls0, CodePage::MAC_ROMAN, true);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"MacOS Controls", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tMacOS Controls:  " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
+#endif
 
 	wcout << endl;
 	wcout << L"Greek ASCII Narrow Char to UTF-32 Conversions: " << endl;
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, L"Ελλάδα (Greece) έκδοση Κωνσταντίνος Πολυχρόνης £€", L"Greek ASCII - Original", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tOriginal:     " << L"Ελλάδα (Greece) έκδοση Κωνσταντίνος Πολυχρόνης £€" << endl;
+#endif
 	string strCP737(aStrCP737);
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strCP737, CodePage::DOS_CP737);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"Greek ASCII - DOS CP737", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tDOS CP737:    " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
+#endif
 	string strMacGreek(aStrMacGreek);
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strMacGreek, CodePage::MAC_GREEK);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"Greek ASCII - MacOS Greek", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tMacOS Greek:  " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
+#endif
 	string strWin1253(aStrWin1253);
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strWin1253, CodePage::WINDOWS_1253);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"Greek ASCII - Windows 1253", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tWindows 1253: " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
+#endif
 	string strISO_8859_7(aStrISO_8859_7);
 	utf32Str = objString->convertStringAscii_to_StringUtf32(strISO_8859_7, CodePage::ISO_8859_7);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"Greek ASCII - ISO 8859-7", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tISO 8859-7:   " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
 #endif
 
@@ -285,13 +311,19 @@ int main(void)
     wideString = objString->convertStringNarrow_to_StringWide(narrowString);
 #endif
 	wcout << L"\tNarrow Char to Wide: " << wideString << endl;
-	
-#if !defined(_WIN32)
+
 	wcout << endl;
 	wcout << L"UTF-32 Emojis to Unicode Wide Char Conversions: " << endl;
 	utf32Str = u32string(utf32StrEmojis);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf32_to_StringWide(utf32Str).c_str(), L"UTF-32 Emojis to Wide Char", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tUTF-32 Emojis to Wide Char: " << objString->convertStringUtf32_to_StringWide(utf32Str) << endl;
+#endif
 	utf16Str = objString->convertStringUtf32_to_StringUtf16(utf32Str);
+#if defined(_WIN32)
+	::MessageBoxExW(NULL, objString->convertStringUtf16_to_StringWide(utf16Str).c_str(), L"UTF-32 Emojis to UTF-16", MB_OK | MB_TOPMOST, 0);
+#else
 	wcout << L"\tUTF-32 Emojis to UTF-16:    " << objString->convertStringUtf16_to_StringWide(utf16Str) << endl;
 #endif
 

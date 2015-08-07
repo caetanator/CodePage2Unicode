@@ -231,7 +231,7 @@
 	#define _tistream	std::istream
 	#define _tostream	std::ostream
 	#define _tifstream	std::ifstream
-    #define _tofstream	std::ofstream
+	#define _tofstream	std::ofstream
 	#define _tistringstream	std::istringstream
 	#define _tostringstream	std::ostringstream
 	// Standard C++ Multi-Byte character console streams
