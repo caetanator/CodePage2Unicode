@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-
-=======
 ﻿
->>>>>>> Test
 #ifndef _STRINGCONVERTION_H_
 #define _STRINGCONVERTION_H_
 
@@ -34,15 +30,9 @@ namespace CaetanoSoft
 		SCP_UNKNOWN = 0,	// Unknown
 		SCP_UCS_2,		// Unicode UCS-2 (2-byte Universal Character Set), maps to UTF-16 BMP (Basic Multilingual Plane) code point
 		SCP_UCS_4,		// Unicode UCS-4 (4-byte Universal Character Set), maps to UTF-32
-<<<<<<< HEAD
-		SCP_UTF_8,		// Unicode UTF-8 (8 bits, 1 to 6 bytes Unicode Transformation Format)
-		SCP_UTF_16,		// Unicode UTF-16 (16 bits, 2 or 4 bytes Unicode Transformation Format)
-		SCP_UTF_32,		// Unicode UTF-32(32 bits, 4-bytes Unicode Transformation Format)
-=======
 		SCP_UTF_8,		// Unicode UTF-8 (8-bit, 1 to 6 bytes Unicode Transformation Format)
 		SCP_UTF_16,		// Unicode UTF-16 (16-bit, 2 or 4 bytes Unicode Transformation Format)
 		SCP_UTF_32,		// Unicode UTF-32(32-bit, 4-bytes Unicode Transformation Format)
->>>>>>> Test
 		SCP_ISO8859_1,	// ISO-8859-1: ISO Latin 1; ANSI Western European
 		SCP_ISO8859_15, // ISO-8859-15: ISO Latin 9; ANSI Western European + Finnish + French + € (same as ISO-8859-1, but with 8 replaced characters like the € insted of ¤)
 		SCP_CP1252,		// Windows-1252: ANSI Latin 1 + €; Windows Western European (same as ISO-8859-1, but with more printing characters insted of control codes defined like the €)

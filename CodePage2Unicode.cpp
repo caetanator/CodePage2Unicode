@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-// http://www.tutorialspoint.com/compile_cpp11_online.php
-// ================================
-
-#include <algorithm>
-#include <cassert>
-#include <cctype>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-// #include <codecvt>
-#include <cmath>
-#include <cwchar>
-#include <exception>
-#include <fstream>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <locale>
-#include <map>
-#include <new>
-#include <sstream>
-#include <stdexcept>
-#include <string>
-#include <typeinfo>
-#include <vector>
-#if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
-#include <Windows.h>
-#endif
-
-#include "CodePage2Unicode.h"
-#include "CompilerInfo.h"
-=======
 ﻿/**
  * CodePage2Unicode.cpp
  *
@@ -59,7 +26,6 @@
 #include "StdAfx.h"
 
 #include "CodePage2Unicode.h"
->>>>>>> Test
 
 using namespace std;
 
