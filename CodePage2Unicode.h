@@ -1,12 +1,40 @@
+<<<<<<< HEAD
 // http://www.tutorialspoint.com/compile_cpp11_online.php
 // ================================
 
+=======
+﻿/**
+ * CodePage2Unicode.h
+ *
+ * ABSTRACT
+ *  Defenition of the CodePage2Unicode API and objects that convert strings from ASCII to Unicode and vice versa.
+ *
+ * CONTACTS
+ *  E-mail regarding any portion of the "CodePage2Unicode" project:
+ *      José Caetano Silva, jcaetano@users.sourceforge.net
+ *
+ * COPYRIGHT
+ *  This file is distributed under the terms of the GNU General Public
+ *  License (GPL) v3. Copies of the GPL can be obtained from:
+ *      ftp://prep.ai.mit.edu/pub/gnu/GPL
+ *  Each contributing author retains all rights to their own work.
+ *
+ *  (C) 20011 - 20015   José Caetano Silva
+ *
+ * HISTORY
+ *  2013-01-11: Created.
+ *  2015-07-17: Fixed typos.
+ */
+ 
+// http://www.tutorialspoint.com/compile_cpp11_online.php
+>>>>>>> Test
 
 #ifndef _CODEPAGE2UNICODE_H_
 #define _CODEPAGE2UNICODE_H_
 
 #pragma once
 
+<<<<<<< HEAD
 using namespace std;
 
 
@@ -22,6 +50,12 @@ using namespace std;
         typedef char _TCHAR;
 #   endif
 #endif
+=======
+#include "StdAfx.h"
+
+using namespace std;
+
+>>>>>>> Test
 
 /**
  * Enumeration width the 8-bit code pages that can be used for conversion
@@ -31,7 +65,11 @@ using namespace std;
  * @version	%I%, %G%
  * @since	1.0
  */
+<<<<<<< HEAD
 #if (__cplusplus >= 201103L) || (__cpp_enumerator_attributes)
+=======
+#ifdef __cpp_strong_enums
+>>>>>>> Test
     // C++11 standard compliment
     enum class CodePage : unsigned int
 #else
@@ -116,6 +154,7 @@ using namespace std;
 	 */
 	UCS_4 = 12001, 
 	/**
+<<<<<<< HEAD
 	 *  UTF-7: Unicode (7-bits, 1 to 6 bytes Unicode Transformation Format)
 	 */
 	UTF_7 = 65000, 
@@ -129,6 +168,21 @@ using namespace std;
 	UTF_16 = 1200, 
 	/**
 	 *  UTF-32: Unicode (32-bits, 4 bytes Unicode Transformation Format)
+=======
+	 *  UTF-7: Unicode (7-bit, 1 to 6 bytes Unicode Transformation Format)
+	 */
+	UTF_7 = 65000, 
+	/**
+	 *  UTF-8: Unicode (8-bit, 1 to 6 bytes Unicode Transformation Format)
+	 */
+	UTF_8 = 65001, 
+	/**
+	 *  UTF-16: Unicode (16-bit, 2 or 4 bytes Unicode Transformation Format)
+	 */
+	UTF_16 = 1200, 
+	/**
+	 *  UTF-32: Unicode (32-bit, 4 bytes Unicode Transformation Format)
+>>>>>>> Test
 	 */
 	UTF_32 = 12000
 };
@@ -191,7 +245,11 @@ private:
     /* Conversion Constants */
 
     /**
+<<<<<<< HEAD
      * UTF-8 half shifting by 6-bits. Used for conversion to/from UTF-32.
+=======
+     * UTF-8 half shifting by 6-bit. Used for conversion to/from UTF-32.
+>>>>>>> Test
      */
     static const unsigned int UTF8_HALF_SHIFT = 6;
 
@@ -245,7 +303,11 @@ private:
     static const char UTF8_NEXT_MASK = (char)0x3FU; // 00111111
 
     /**
+<<<<<<< HEAD
      * UTF-16 half shifting by 10 bits. Used for conversion to/from UTF-32.
+=======
+     * UTF-16 half shifting by 10-bit. Used for conversion to/from UTF-32.
+>>>>>>> Test
      */
     static const unsigned int UTF16_HALF_SHIFT = 10;
     /**
@@ -1594,7 +1656,11 @@ public:
 
     /**
      * Checks if the supplied UTF-32 code unit is a surrogate.<br />
+<<<<<<< HEAD
      * As Unicode 6.3, there aren't UTF-32 surrogates because the higher code point in use is 21-bits.
+=======
+     * As Unicode 6.3, there aren't UTF-32 surrogates because the higher code point in use is 21-bit.
+>>>>>>> Test
      *
      * @author	Jos&eacute; Caetano Silva
      * @version	%I%, %G%
