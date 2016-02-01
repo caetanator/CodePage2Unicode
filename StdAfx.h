@@ -2,7 +2,7 @@
  * StdAfx.h
  *
  * ABSTRACT
- *  Include file for standard system include files, or project specific include files that 
+ *  Include file for standard system include files, or project specific include files that
  *  are used frequently, but are changed infrequently.
  *
  * CONTACTS
@@ -59,11 +59,6 @@
 // C++ Standard Header Files
 #include <algorithm>
 #include <cassert>
-#include <cctype>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
 #ifdef __has_include
 #   if __has_include(<codecvt>)
 #       include <codecvt>
@@ -75,7 +70,14 @@
 #       define __HAS_INCLUDE_CODECVT
 #   endif
 #endif
+#include <cctype>
+#include <cerrno>
+#include <climits>
 #include <cmath>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #ifdef __has_include
 #   if __has_include(<cuchar>)
 #       include <cuchar>
@@ -88,6 +90,7 @@
 #   endif
 #endif
 #include <cwchar>
+#include <cwctype>
 #include <exception>
 #include <fstream>
 #include <functional>
@@ -104,15 +107,19 @@
 #else
 // C Standard Header Files
 #include <assert.h>
+#include <ctype.h>
 #include <errno.h>
 #include <limits.h>
+#include <locale.h>
 #include <math.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <uchar.h>
 #include <wchar.h>
+#include <wctype.h>
 #endif      // __cplusplus
 
 // Cleanup

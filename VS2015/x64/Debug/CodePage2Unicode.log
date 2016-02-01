@@ -1,0 +1,20 @@
+﻿Build started 07-08-2015 10:33:11.
+     1>Project "C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\CodePage2Unicode.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Yc"stdafx.h" /Fp"x64\Debug\CodePage2Unicode.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ..\StdAfx.cpp
+         StdAfx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Yu"stdafx.h" /Fp"x64\Debug\CodePage2Unicode.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt ..\CodePage2Unicode.cpp ..\main.cpp
+         main.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         CodePage2Unicode.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\x64\Debug\CodePage2Unicode.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\x64\Debug\CodePage2Unicode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\x64\Debug\CodePage2Unicode.lib" /MACHINE:X64 x64\Debug\CodePage2Unicode.obj
+         x64\Debug\main.obj
+         x64\Debug\StdAfx.obj
+         CodePage2Unicode.vcxproj -> C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\x64\Debug\CodePage2Unicode.exe
+     1>Done Building Project "C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\CodePage2Unicode.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:07.74
