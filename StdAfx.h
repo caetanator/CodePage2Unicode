@@ -117,7 +117,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <uchar.h>
+#if (defined(_MSC_VER) && (_MSC_VER >= 1800)) || (defined(__clang__) && (__clang_major__ >= 3))
+#   include <uchar.h>
+#   define __HAS_INCLUDE_UCHAR
+#endif
 #include <wchar.h>
 #include <wctype.h>
 #endif      // __cplusplus
