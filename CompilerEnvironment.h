@@ -6,7 +6,7 @@
 // Machine native narrow, wide and default character size and type
 /*
     These macros are for detect the machine character type
-    
+
     __CHAR_NARROW_TYPE is set as follows:
         * __CHAR_NARROW_TYPE_UNKNOWN    -> Unknown
         * __CHAR_NARROW_TYPE_ASCII      -> 8 bit ASCII code page
@@ -17,8 +17,8 @@
         * __CHAR_WIDE_TYPE_UNKNOWN      -> Unknown
         * __CHAR_WIDE_TYPE_UTF16        -> 16 bit Unicode (UTF-16 / USC-2)
         * __CHAR_WIDE_TYPE_UTF32        -> 32 bit Unicode (UTF-32 / UCS-4)
-        
-    
+
+
     __CHAR_API_TYPE is set as follows:
         * __CHAR_API_TYPE_NARROW   -> Use native C/C++ narrow char APIs
         * __CHAR_API_TYPE_WIDE     -> Use native C/C++ wide char APIs
@@ -37,7 +37,7 @@
 // Default OS settings
 #if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
     // Microsoft Windows:
-    //  All currently known Windows platforms don't use UTF-8 for 'char', 
+    //  All currently known Windows platforms don't use UTF-8 for 'char',
 	//  and is not supported by the console/shell. Windows use ASCII code pages.
     // Windows NT use UCS-2 for 'wchar_t' and Windows 2000 and above use UTF-16.
 #   define __CHAR_NARROW_TYPE   __CHAR_NARROW_TYPE_ASCII
@@ -51,7 +51,7 @@
 
 // Compute 'wchar_t' size by the info from the compiler
 #ifdef __STDC_ISO_10646__
-	// For any compiler that provides this, 'wchar_t' is guaranteed to hold any Unicode 
+	// For any compiler that provides this, 'wchar_t' is guaranteed to hold any Unicode
 	// value with a single code point (32-bit or larger)
 #   ifdef __CHAR_WIDE_TYPE
 #       undef   __CHAR_WIDE_TYPE
@@ -103,12 +103,12 @@
 #   define ALIGN_8_BYTE __attribute__((aligned(8)))
 #else
 	// Unknown compiler
-#   define ALIGN_1_BYTE 
-#   define ALIGN_2_BYTE 
-#   define ALIGN_4_BYTE 
-#   define ALIGN_8_BYTE 
+#   define ALIGN_1_BYTE
+#   define ALIGN_2_BYTE
+#   define ALIGN_4_BYTE
+#   define ALIGN_8_BYTE
 #endif
- 
+
 
 // Dynamic Linked Library support
 #if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
@@ -116,13 +116,15 @@
 #		ifdef __GNUC__
 #			define DLL_PUBLIC __attribute__ ((dllexport))
 #		else
-#			define DLL_PUBLIC __declspec(dllexport) // Note: actually GCC seems to also supports this syntax.
+//          Note: actually GCC seems to also supports this syntax.
+#			define DLL_PUBLIC __declspec(dllexport)
 #		endif
 #	else
 #		ifdef __GNUC__
 #			define DLL_PUBLIC __attribute__ ((dllimport))
 #		else
-#			define DLL_PUBLIC __declspec(dllimport) // Note: actually GCC seems to also supports this syntax.
+//          Note: actually GCC seems to also supports this syntax.
+#			define DLL_PUBLIC __declspec(dllimport)
 #		endif
 #	endif
 #	define DLL_LOCAL
@@ -141,13 +143,13 @@
 #ifdef __cpp_constexpr
 #	define CPP11_CONSTEXPR constexpr
 #else
-#	define CPP11_CONSTEXPR 
+#	define CPP11_CONSTEXPR
 #endif
 
 #ifdef __cpp_noexcept
 #	define CPP11_NOEXCEPT noexcept
 #else
-#	define CPP11_NOEXCEPT throw() 
+#	define CPP11_NOEXCEPT throw()
 #endif
 
 #ifdef __cpp_override_control

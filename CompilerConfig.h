@@ -20,7 +20,7 @@
  *  2013-01-11: Created.
  *  2015-07-17: Fixed typos.
  */
- 
+
 #ifndef __COMPILERCONFIG_H_
 #define __COMPILERCONFIG_H_
 
@@ -104,7 +104,7 @@
 			#endif
 			#if !defined _int_t
 				#define _int_t      wint_t
-			#endif	
+			#endif
 			#if !defined _tfopen
 				#define _tfopen     wfopen
 			#endif
@@ -227,7 +227,7 @@
 	// Standard C++ wide character strings
 	#define _tstring    std::wstring
 #elif defined(_MBCS)
-	// Standard C++ Multi-Byte character streams
+	// Standard C++ multi-byte character streams
 	#define _tistream	std::istream
 	#define _tostream	std::ostream
 	#define _tifstream	std::ifstream
@@ -239,7 +239,7 @@
 	#define _tcout      std::cout
 	#define _tcerr      std::cerr
 	#define _tclog      std::clog
-	// Standard C++ Multi-Byte character strings
+	// Standard C++ multi-byte character strings
 	#define _tstring    std::string
 #else
 	// Standard C++ narrow character streams

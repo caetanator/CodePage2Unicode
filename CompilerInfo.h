@@ -20,7 +20,7 @@
  *  2013-01-11: Created.
  *  2015-07-17: Fixed typos.
  */
- 
+
 #ifndef _COMPILERINFO_H_
 #define _COMPILERINFO_H_
 
@@ -28,7 +28,7 @@
 
 // Machine compiler type
 /*
- *  These macros are for detect the machine compiler type __COMPILER_TYPE is set as follows: 
+ *  These macros are for detect the machine compiler type __COMPILER_TYPE is set as follows:
  * __COMPILER_TYPE_UNKNOWN  -> Unknown
  * __COMPILER_TYPE_MSVC     -> Microsoft Visual C++
  * __COMPILER_TYPE_MINGW    -> MinGW
@@ -55,7 +55,7 @@
  * __COMPILER_PLATFORM_TYPE_MACOS       -> Mac OS
  * __COMPILER_PLATFORM_TYPE_UNIX        -> UNIX based OS
  * __COMPILER_PLATFORM_TYPE_POSIX       -> POSIX compatible OS
- * 
+ *
  *    Note: UNIX and POSIX are generic.
  */
 #define __COMPILER_PLATFORM_TYPE_UNKNOWN    0
@@ -147,7 +147,7 @@
  * __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN		-> Big Endian (SPARC, PowerPC)
  * __COMPILER_CPU_BYTE_ORDER_WSLE_ENDIAN	-> Word-Swapped Little-Endian (PDP-11. Old format. Not supported by us)
  * __COMPILER_CPU_BYTE_ORDER_WSBE_ENDIAN	-> Word-Swapped Big-Endian (Honeywell 316. Old format. Not supported by us)
- * 
+ *
  *  Note: MIPS and ARM processors can be programmed for little or big endian.
  */
 #define __COMPILER_CPU_BYTE_ORDER_UNKNOWN_ENDIAN    0
@@ -215,13 +215,13 @@
 #endif
 
 /* Detect the compiler used to generate the binary code */
-#if defined(_MSC_VER)
+#if defined(_MSC_VER) && !defined(__clang__)
     // Microsoft Visual C++ compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_MSVC
 #   define __COMPILER_VERSION_MAJOR (_MSC_VER / 100)
 #   define __COMPILER_VERSION_MINOR (_MSC_VER - (__COMPILER_VERSION_MAJOR * 100))
 #   define __COMPILER_VERSION_BUILD (_MSC_FULL_VER - (_MSC_VER * 100000))
-#   define __COMPILER_VERSION_PATCH (_MSC_BUILD)
+#   define __COMPILER_VERSION_PATCH (0)
 #   define __COMPILER_VERSION       (_MSC_FULL_VER)
 #elif defined(__MINGW64__)
     // MinGW 64-bit compiler detected

@@ -27,19 +27,21 @@
 
 #pragma once
 
+#include "ThirdParty/include/Boost/cpp_feature.h"
+
 // Special macro flags
 // * The NDEBUG macro controls if the assert macro is enabled in <assert.h> and <cassert>
 #ifdef _DEBUG
 #   ifdef NDEBUG
-    // Enables the assert macro
-#   undef NDEBUG
-#       endif
+        // Enables the assert macro
+#       undef NDEBUG
+#   endif
 #else
     // Disable the assert macro
 #   define NDEBUG
 #endif
 
-#if _MSC_VER
+#if defined(_MSC_VER) && !(defined(__clang__)
 	// * The _USE_MATH_DEFINES enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for MS VC++
 #	define _USE_MATH_DEFINES
 #elif defined(__GNUC__)
@@ -62,12 +64,12 @@
 #ifdef __has_include
 #   if __has_include(<codecvt>)
 #       include <codecvt>
-#       define __HAS_INCLUDE_CODECVT
+#       define __HAS_INCLUDE_CODECVT    1
 #   endif
 #else
 #   if (defined(_MSC_VER) && (_MSC_VER >= 1600)) || (defined(__clang__) && (__clang_major__ >= 3))
 #       include <codecvt>
-#       define __HAS_INCLUDE_CODECVT
+#       define __HAS_INCLUDE_CODECVT    1
 #   endif
 #endif
 #include <cctype>
@@ -81,12 +83,12 @@
 #ifdef __has_include
 #   if __has_include(<cuchar>)
 #       include <cuchar>
-#       define __HAS_INCLUDE_CUCHAR
+#       define __HAS_INCLUDE_CUCHAR     1
 #   endif
 #else
 #   if (defined(_MSC_VER) && (_MSC_VER >= 1800)) || (defined(__clang__) && (__clang_major__ >= 3))
 #       include <cuchar>
-#       define __HAS_INCLUDE_CUCHAR
+#       define __HAS_INCLUDE_CUCHAR     1
 #   endif
 #endif
 #include <cwchar>
@@ -119,7 +121,7 @@
 #include <time.h>
 #if (defined(_MSC_VER) && (_MSC_VER >= 1800)) || (defined(__clang__) && (__clang_major__ >= 3))
 #   include <uchar.h>
-#   define __HAS_INCLUDE_UCHAR
+#   define __HAS_INCLUDE_UCHAR_H    1
 #endif
 #include <wchar.h>
 #include <wctype.h>

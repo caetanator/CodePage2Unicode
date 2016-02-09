@@ -2,7 +2,7 @@
  * StdAfx.cpp
  *
  * ABSTRACT
- *  Include file for standard system include files, or project specific include files that 
+ *  Include file for standard system include files, or project specific include files that
  *  are used frequently, but are changed infrequently.
  *
  * CONTACTS
@@ -22,4 +22,4 @@
  *  2015-07-17: Fixed typos.
  */
 
-#include "stdafx.h"
+#include "StdAfx.h"
