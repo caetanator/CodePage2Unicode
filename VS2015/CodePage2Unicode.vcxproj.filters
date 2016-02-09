@@ -36,7 +36,7 @@
     <ClInclude Include="..\CompilerEnvironment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\ThirdParty\include\Boost\cpp_feature.h">
+    <ClInclude Include="..\ThirdParty\Boost\include\cpp_feature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

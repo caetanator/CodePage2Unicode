@@ -27,7 +27,7 @@
 
 #pragma once
 
-#include "ThirdParty/include/Boost/cpp_feature.h"
+#include "ThirdParty/Boost/include/cpp_feature.h"
 
 // Special macro flags
 // * The NDEBUG macro controls if the assert macro is enabled in <assert.h> and <cassert>
