@@ -54,31 +54,30 @@
 //	OS							WinSDKVer.h			Version
 //	Windows 95										0x0400
 //	Windows 98, 98SE								0x0410		
-//	Windows ME								 		0x0500
+//	Windows ME								 		0x0490
 #ifndef _WIN32_WINDOWS
 // Change this to the appropriate value to target Windows 95, Windows 98 or Windows ME.
-//#define _WIN32_WINDOWS 0x0500
+//#define _WIN32_WINDOWS 0x0410
 #endif
 
 // *  Minimum OS version for 32/64-bit Windows
 // Specifies that the minimum required platform is Windows Vista/Server 2008.
 //	OS							WinSDKVer.h				Version
-//	Windows NT 3.1										0x030A
-//	Windows NT 3.5										0x0332
-//	Windows NT 3.51										0x0333
-//	Windows NT 4.0										0x0400
-//	Windows 2000								 		0x0500
+//	Windows NT 3.1										0x0310
+//	Windows NT 3.5										0x0350
+//	Windows NT 3.51										0x0351
+//	Windows NT 4.0				_WIN32_WINNT_NT4		0x0400
+//	Windows 2000				_WIN32_WINNT_WIN2K		0x0500
 //	Windows XP					_WIN32_WINNT_WINXP 		0x0501
-//	Windows XP SP2				_WIN32_WINNT_WS03 		0x0502
-//	Windows Server 2003			_WIN32_WINNT_WINXP 		0x0501
-//	Windows Server 2003 SP1		_WIN32_WINNT_WS03 		0x0502
+//	Windows Server 2003			_WIN32_WINNT_WS03 		0x0502
 //	Windows Vista				_WIN32_WINNT_VISTA 		0x0600
 //	Windows Server 2008			_WIN32_WINNT_WS08 		0x0600
 //	Windows 7					_WIN32_WINNT_WIN7 		0x0601
 //	Windows 8					_WIN32_WINNT_WIN8 		0x0602
-//	Windows 8.1					_WIN32_WINNT_WINBLUE	0x0602
+//	Windows 8.1					_WIN32_WINNT_WINBLUE	0x0603
+//	Windows 10					_WIN32_WINNT_WIN10		0x0A00
 #ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0600
+#define _WIN32_WINNT 0x0601
 #endif
 
 // *  Minimum OS version for Windows CE/Mobile/Phone
@@ -105,9 +104,10 @@
 //	IE 8.0						_WIN32_IE_IE80 		0x0800
 //	IE 9.0						_WIN32_IE_IE90 		0x0900
 //	IE 10.0						_WIN32_IE_IE100		0x0A00
+//	IE 11.0						_WIN32_IE_IE110		0x0A00
 #ifndef _WIN32_IE
 // Change this to the appropriate value to target other versions of IE.
-#define _WIN32_IE 0x0700        
+#define _WIN32_IE 0x0A00        
 #endif
 
 // *  Minimum DDK version needed
@@ -130,6 +130,7 @@
 //	Windows 7					NTDDI_WIN7 		0x06010000
 //	Windows 8					NTDDI_WIN8 		0x06020000
 //	Windows 8.1					NTDDI_WINBLUE	0x06030000
+//	Windows 10					NTDDI_WINBLUE	0x0A000000
 #ifndef NTDDI_VERSION
 // Change this to the appropriate value to target other versions of DDK.
 //#define NTDDI_VERSION	0x06010000

@@ -33,10 +33,10 @@
     <ClInclude Include="..\CompilerInfo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\cpp_feature.h">
+    <ClInclude Include="..\CompilerEnvironment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\CompilerEnvironment.h">
+    <ClInclude Include="..\ThirdParty\include\Boost\cpp_feature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

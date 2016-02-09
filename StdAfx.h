@@ -41,7 +41,7 @@
 #   define NDEBUG
 #endif
 
-#if defined(_MSC_VER) && !(defined(__clang__)
+#if defined(_MSC_VER) && !defined(__clang__)
 	// * The _USE_MATH_DEFINES enables non ANSI C/C++ defines like M_PI in <math.h> and <cmath> for MS VC++
 #	define _USE_MATH_DEFINES
 #elif defined(__GNUC__)
@@ -162,7 +162,6 @@
 #endif
 
 // Compiler Abstraction Header Files
-#include "cpp_feature.h"
 #include "CompilerInfo.h"
 #include "CompilerConfig.h"
 #include "CompilerEnvironment.h"
