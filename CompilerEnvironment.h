@@ -158,7 +158,7 @@
 #	define CPP11_OVERRIDE
 #endif
 
-// Compiler version detection
+// Compiler version validation
 #if defined(__clang__)
 	// CLang compiler detected
 #	if (__clang_major__ < 3) || ((__clang_major__ == 3) && (__clang_minor__ < 1))
