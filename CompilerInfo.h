@@ -1,4 +1,4 @@
-﻿/**
+/**
  * CompilerInfo.h
  *
  * ABSTRACT
@@ -221,8 +221,9 @@
 )
 
 /* Detect the OS platform */
-#if defined(_WINDOWS) || (WINVER <= 0x030A)
+#if defined(_WINDOWS) || (defined(WINVER) && (WINVER <= 0x030A))
     // Windows 16-bit
+#error "ups"
 #   define __COMPILER_PLATFORM_TYPE     __COMPILER_PLATFORM_TYPE_WINDOWS
 #   define __COMPILER_PLATFORM_SUBTYPE  __COMPILER_PLATFORM_SUBTYPE_WINDOWS_16
 #   define __COMPILER_CPU_BYTE_ORDER    __COMPILER_CPU_BYTE_ORDER_LITTLE_ENDIAN
@@ -297,8 +298,8 @@
 #   define __COMPILER_TYPE          __COMPILER_TYPE_MSVC
 #   define __COMPILER_VERSION_MAJOR (_MSC_VER / 100)
 #   define __COMPILER_VERSION_MINOR (_MSC_VER - (__COMPILER_VERSION_MAJOR * 100))
-#   define __COMPILER_VERSION_BUILD (_MSC_FULL_VER - (_MSC_VER * 100000))
-#   define __COMPILER_VERSION_PATCH (_MSC_BUILD)
+#   define __COMPILER_VERSION_BUILD (_MSC_BUILD)
+#   define __COMPILER_VERSION_PATCH (_MSC_FULL_VER - (_MSC_VER * 100000))
 #   define __COMPILER_VERSION       (_MSC_FULL_VER)
 #elif defined(__MINGW64__)
     // MinGW 64-bit compiler detected
