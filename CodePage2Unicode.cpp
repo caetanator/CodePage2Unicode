@@ -1,4 +1,4 @@
-﻿/**
+/**
  * CodePage2Unicode.cpp
  *
  * ABSTRACT
@@ -823,17 +823,17 @@ char32_t CodePage2Unicode::convertCharAscii_to_CharUtf32(const char narrowChar, 
                (codePage == CodePage::DOS_CP860))
             {
                 // MS-DOS extensions
-                return convertDOS_ASCII_To_Unicode(code);
+                return convertDOS_ASCII_To_Unicode((char)code);
             }
             else if((codePage == CodePage::MAC_ROMAN) ||
                     (codePage == CodePage::MAC_GREEK))
             {
                 // MacOS extensions
-                return convertMac_ASCII_To_Unicode(code);
+                return convertMac_ASCII_To_Unicode((char)code);
             }
         }
         // else
-        return convertASCII_To_Unicode(code);
+        return convertASCII_To_Unicode((char)code);
     }
     // else
     // Extended ASCII
@@ -841,72 +841,72 @@ char32_t CodePage2Unicode::convertCharAscii_to_CharUtf32(const char narrowChar, 
     {
 		// US_ASCII, IBM367, cp367, 367 - Code page IBM 367, MS-DOS US-ASCII
         case CodePage::US_ASCII:
-            return convertDOS_CP367_To_Unicode(code);
+            return convertDOS_CP367_To_Unicode((char)code);
             break;
 
         // IBM437, cp437, 437 - Code page IBM 437, MS-DOS Latin US (English, Western Europe)
         case CodePage::DOS_CP437:
-            return convertDOS_CP437_To_Unicode(code);
+            return convertDOS_CP437_To_Unicode((char)code);
             break;
 
         // IBM737, cp737, 737 - Code page IBM 737, MS-DOS Greek (Greek, English)
         case CodePage::DOS_CP737:
-            return convertDOS_CP737_To_Unicode(code);
+            return convertDOS_CP737_To_Unicode((char)code);
             break;
 
         // IBM850, cp850, 850 - Code page IBM 850, MS-DOS Latin-1/Multilingual (Latin-1, Western Europe)
         case CodePage::DOS_CP850:
-            return convertDOS_CP850_To_Unicode(code);
+            return convertDOS_CP850_To_Unicode((char)code);
             break;
 
         // IBM858, cp858@euro, 858 - Code page IBM 858, MS-DOS Latin-1/Multilingual with € (Latin-1, Western Europe, €)
         case CodePage::DOS_CP858:
-            return convertDOS_CP858_To_Unicode(code);
+            return convertDOS_CP858_To_Unicode((char)code);
             break;
 
         // IBM859, cp859@euro, 859 - Code page IBM 859, MS-DOS Latin-9 (Latin-9, Latin-1, Western Europe, €)
         case CodePage::DOS_CP859:
-            return convertDOS_CP859_To_Unicode(code);
+            return convertDOS_CP859_To_Unicode((char)code);
             break;
 
         // IBM860, cp860, 860 - Code page IBM 860, MS-DOS Portuguese (Portuguese, Western Europe)
         case CodePage::DOS_CP860:
-            return convertDOS_CP860_To_Unicode(code);
+            return convertDOS_CP860_To_Unicode((char)code);
             break;
 
         // macintosh@euro, mac, MacRoman, 10000 - Code page Apple Macintosh, Mac OS Latin-1/Roman (Latin-1, Western Europe, €)
         case CodePage::MAC_ROMAN:
-            return convertMac_Roman_To_Unicode(code);
+            return convertMac_Roman_To_Unicode((char)code);
             break;
 
         // x-mac-greek, MacGreek, 10006 - Code page Apple Macintosh, Mac OS Greek (Greek, English)
         case CodePage::MAC_GREEK:
-            return convertMac_Greek_To_Unicode(code);
+            return convertMac_Greek_To_Unicode((char)code);
             break;
 
         // windows-1252@euro, 1252 - Code page Microsoft Windows 1252, Windows Latin-1/Western Europe (Latin-1, Western Europe, €)
         case CodePage::WINDOWS_1252:
-            return convertWindows_1252_To_Unicode(code);
+            return convertWindows_1252_To_Unicode((char)code);
             break;
 
         // windows-1253@euro, 1253 - Code page Microsoft Windows 1253, Windows Greek (Greek, English, €)
         case CodePage::WINDOWS_1253:
-            return convertWindows_1253_To_Unicode(code);
+            return convertWindows_1253_To_Unicode((char)code);
             break;
 
         // ISO-8859-1, 28591 - Code page ISO 8859-1, ISO/IEC Latin-1 (Latin-1, Western Europe)
         case CodePage::ISO_8859_1:
-            return convertISO_8859_1_To_Unicode(code);
+            return convertISO_8859_1_To_Unicode((char)code);
             break;
 
         // ISO-8859-7@euro, 28597 - Code page ISO 8859-7, ISO/IEC Greek (Greek, English, €)
         case CodePage::ISO_8859_7:
-            return convertISO_8859_7_To_Unicode(code);
+            return convertISO_8859_7_To_Unicode((char)code);
             break;
 
         // ISO-8859-15@euro, 28605 - Code page ISO 8859-15, ISO/IEC Latin-9 (Latin-9, Latin-1, Western Europe, €)
         case CodePage::ISO_8859_15:
-            return convertISO_8859_15_To_Unicode(code);
+            return convertISO_8859_15_To_Unicode((char)code);
             break;
     }
 
@@ -1445,7 +1445,7 @@ u16string CodePage2Unicode::convertStringUtf32_to_StringUtf16(const u32string& u
         surrogate32 = isUtf32Surrogate(charUtf32);
 
         // Check if UTF-32 code point is valid
-        if(!isUnicodeInterchangeCharacter(charUtf32) && !isUtf16Surrogate(charUtf32))
+        if(!isUnicodeInterchangeCharacter(charUtf32) && !isUtf16Surrogate((char16_t)charUtf32))
         {
             if(strictConversion)
             {
@@ -1609,7 +1609,7 @@ string CodePage2Unicode::convertStringUtf32_to_StringUtf8(const u32string& utf32
             ++i;
 
             // Check if UTF-32 code point is valid
-            if(!isUnicodeInterchangeCharacter(codePoint) && !isUtf16Surrogate(codePoint))
+            if(!isUnicodeInterchangeCharacter(codePoint) && !isUtf16Surrogate((char16_t)codePoint))
             {
                 if(strictConversion)
                 {
