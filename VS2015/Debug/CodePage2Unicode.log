@@ -1,0 +1,28 @@
+﻿  StdAfx.cpp
+  main.cpp
+  CodePage2Unicode.cpp
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(826): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(832): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(836): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(844): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(849): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(854): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(859): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(864): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(869): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(874): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(879): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(884): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(889): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(894): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(899): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(904): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(909): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1407): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1448): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1612): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1660): warning C4101: 'ex': unreferenced local variable
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1788): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
+c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1803): warning C4101: 'ex': unreferenced local variable
+  Generating Code...
+  CodePage2Unicode.vcxproj -> C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\Debug\CodePage2Unicode.exe
