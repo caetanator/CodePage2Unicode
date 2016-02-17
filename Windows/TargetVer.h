@@ -46,7 +46,7 @@
 //	Windows 3.1, 3.11								0x030A
 #ifndef WINVER
 // Change this to the appropriate value to target other versions of Windows 1.x/2.x/3.xx.
-//#define WINVER 0x030A
+//#	define WINVER 0x030A
 #endif
 
 // *  Minimum OS version for pseudo 32-bit Windows
@@ -57,7 +57,7 @@
 //	Windows ME								 		0x0490
 #ifndef _WIN32_WINDOWS
 // Change this to the appropriate value to target Windows 95, Windows 98 or Windows ME.
-//#define _WIN32_WINDOWS 0x0410
+//#	define _WIN32_WINDOWS 0x0410
 #endif
 
 // *  Minimum OS version for 32/64-bit Windows
@@ -77,14 +77,14 @@
 //	Windows 8.1					_WIN32_WINNT_WINBLUE	0x0603
 //	Windows 10					_WIN32_WINNT_WIN10		0x0A00
 #ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0601
+#	define _WIN32_WINNT 0x0601
 #endif
 
 // *  Minimum OS version for Windows CE/Mobile/Phone
 // Specifies that the minimum required platform is Windows CE/Mobile/Phone.
 #ifndef _WIN32_WCE
 // Change this to the appropriate value to target other versions of Windows CE.
-//#define _WIN32_WCE 0x0600
+//#	define _WIN32_WCE 0x0600
 #endif
 
 // *  Minimum IE version needed
@@ -107,7 +107,7 @@
 //	IE 11.0						_WIN32_IE_IE110		0x0A00
 #ifndef _WIN32_IE
 // Change this to the appropriate value to target other versions of IE.
-#define _WIN32_IE 0x0A00        
+#	define _WIN32_IE 0x0A00        
 #endif
 
 // *  Minimum DDK version needed
@@ -133,7 +133,7 @@
 //	Windows 10					NTDDI_WINBLUE	0x0A000000
 #ifndef NTDDI_VERSION
 // Change this to the appropriate value to target other versions of DDK.
-//#define NTDDI_VERSION	0x06010000
+//#	define NTDDI_VERSION	0x06010000
 #endif
 
 
@@ -160,15 +160,9 @@
 // 	6.0 			Office 2007, Encarta Math Calculator 	Riched20.dll	MSFTEDIT_CLASS
 #ifndef _RICHEDIT_VER
 // Change this to the appropriate value to target other versions of Rich Edit control.
-//#define _RICHEDIT_VER	0x0410
+//#	define _RICHEDIT_VER	0x0410
 #endif
 
-
-// Specifies that UNICODE is expected.
-// Comment this if you want ASCII.
-#ifndef _UNICODE
-//#define _UNICODE	0xFFFF
-#endif
 
 // Exclude rarely-used stuff from Windows headers.
 // Comment this if you want to include APIs such as Cryptography, DDE, RPC, Shell, and Windows Sockets.
@@ -190,7 +184,17 @@
 #define _SCL_SECURE_NO_WARNINGS							// No standard C functions deprecation warnings
 #define _SCL_SECURE_NO_DEPRECATE
  
-#pragma warning(disable: 4995)							// The above macros doesn't work any more
+#pragma warning(disable: 4995)							// The above macros doesn't work any more on VC++ 2010 and above
 
+
+// Creates the "_WIN16" macro for 16-bit Windows support
+#if !defined(_WIN32) && !defined(_WIN64) && !defined(_WIN32_WCE) && !defined(__MINGW32__) && !defined(__MINGW64__)
+#	if defined(_WINDOWS) || (defined(WINVER) && (WINVER <= 0x030A))
+// 16-bit Windows detected
+#		if !defined(_WIN16)
+#			define	_WIN16	1
+#		endif
+#	endif
+#endif
 
 #endif /* _TARGETVER_H_ */

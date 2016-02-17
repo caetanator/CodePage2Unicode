@@ -172,6 +172,7 @@ int main(void)
 	CodePage2Unicode * objString = new CodePage2Unicode();
 
 	wcout << endl;
+	wcout << L"Run Plataform & Compiler Info:" << endl;
 	wcout << L"\tCompiler Type:     " << (__COMPILER_TYPE_STRING) << endl;
 	wcout << L"\tCompiler Version:  " << __COMPILER_VERSION_MAJOR << L'.' << __COMPILER_VERSION_MINOR << L'.' << __COMPILER_VERSION_PATCH << L'.' << __COMPILER_VERSION_BUILD << endl;
 	wcout << L"\tCPU Family:        " << __COMPILER_CPU_FAMILY << endl;

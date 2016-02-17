@@ -1492,23 +1492,23 @@ public:
         unsigned char _charUtf8 = static_cast<unsigned char>(charUtf8);
         bool bRet = false;
 
-        if((_charUtf8 >= UTF8_LEAD_BYTES2) && (_charUtf8 < UTF8_LEAD_BYTES3))
+        if((_charUtf8 >= (unsigned char)UTF8_LEAD_BYTES2) && (_charUtf8 < (unsigned char)UTF8_LEAD_BYTES3))
         {
             bRet = true;
         }
-        else if((_charUtf8 >= UTF8_LEAD_BYTES3) && (_charUtf8 < UTF8_LEAD_BYTES4))
+        else if((_charUtf8 >= (unsigned char)UTF8_LEAD_BYTES3) && (_charUtf8 < (unsigned char)UTF8_LEAD_BYTES4))
         {
             bRet = true;
         }
-        else if((_charUtf8 >= UTF8_LEAD_BYTES4) && (_charUtf8 < UTF8_LEAD_BYTES5))
+        else if((_charUtf8 >= (unsigned char)UTF8_LEAD_BYTES4) && (_charUtf8 < (unsigned char)UTF8_LEAD_BYTES5))
         {
             bRet = true;
         }
-        else if((_charUtf8 >= UTF8_LEAD_BYTES5) && (_charUtf8 < UTF8_LEAD_BYTES6))
+        else if((_charUtf8 >= (unsigned char)UTF8_LEAD_BYTES5) && (_charUtf8 < (unsigned char)UTF8_LEAD_BYTES6))
         {
             bRet = true;
         }
-        else if((_charUtf8 == UTF8_LEAD_BYTES6))
+        else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
         {
             bRet = true;
         }

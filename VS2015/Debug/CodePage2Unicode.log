@@ -1,28 +1,103 @@
 ﻿  StdAfx.cpp
-  main.cpp
   CodePage2Unicode.cpp
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(826): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(832): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(836): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(844): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(849): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(854): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(859): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(864): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(869): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(874): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(879): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(884): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(889): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(894): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(899): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(904): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(909): warning C4244: 'argument': conversion from 'char32_t' to 'const char', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1407): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1448): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1612): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1660): warning C4101: 'ex': unreferenced local variable
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1788): warning C4244: 'argument': conversion from 'char32_t' to 'const char16_t', possible loss of data
-c:\users\jcaetano\documents\my source code\c e c++\ansi\codepage2unicode\codepage2unicode.cpp(1803): warning C4101: 'ex': unreferenced local variable
-  Generating Code...
+  In file included from ..\CodePage2Unicode.cpp:28:
+../CodePage2Unicode.h(503,19): warning : comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+          if(((code >= 0) && (code <= 31)) || (code == 127))
+               ~~~~ ^  ~
+../CodePage2Unicode.h(1338,34): warning : comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+          bool bRet = (((charUtf32 >= UNICODE_MINIMUM) && (charUtf32 < UNICODE_HIGH_SURROGATE_START)) ||
+                         ~~~~~~~~~ ^  ~~~~~~~~~~~~~~~
+../CodePage2Unicode.h(1419,34): warning : comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+          bool bRet = (((charUtf32 >= UNICODE_MINIMUM) && (charUtf32 <= 0x001FUL)) ||
+                         ~~~~~~~~~ ^  ~~~~~~~~~~~~~~~
+../CodePage2Unicode.h(1511,28): warning : equality comparison with extraneous parentheses [-Wparentheses-equality]
+          else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+                   ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ../CodePage2Unicode.h(1511,28) :  note: remove extraneous parentheses around the comparison to silence this warning
+          else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+                  ~          ^                                 ~
+  ../CodePage2Unicode.h(1511,28) :  note: use '=' to turn this equality comparison into an assignment
+          else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+                             ^~
+                             =
+..\CodePage2Unicode.cpp(510,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&str != nullptr);
+              ^~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(536,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&str != nullptr);
+              ^~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(562,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&str != nullptr);
+              ^~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(588,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&str != nullptr);
+              ^~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(613,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&str != nullptr);
+              ^~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(638,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&str != nullptr);
+              ^~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(840,12): warning : 9 enumeration values not handled in switch: 'UNKNOWN', 'DOS_CP851', 'DOS_CP869'... [-Wswitch]
+      switch(codePage)
+             ^
+..\CodePage2Unicode.cpp(1547,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&utf16String != nullptr);
+              ^~~~~~~~~~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(1588,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&utf32String != nullptr);
+              ^~~~~~~~~~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+..\CodePage2Unicode.cpp(1689,13): warning : reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+      assert(&utf8String != nullptr);
+              ^~~~~~~~~~    ~~~~~~~
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\assert.h(33,17) :  note: expanded from macro 'assert'
+              (!!(expression)) ||                                                              \
+                  ^
+  14 warnings generated.
+  main.cpp
+  In file included from ..\main.cpp:34:
+../CodePage2Unicode.h(503,19): warning : comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+          if(((code >= 0) && (code <= 31)) || (code == 127))
+               ~~~~ ^  ~
+../CodePage2Unicode.h(1338,34): warning : comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+          bool bRet = (((charUtf32 >= UNICODE_MINIMUM) && (charUtf32 < UNICODE_HIGH_SURROGATE_START)) ||
+                         ~~~~~~~~~ ^  ~~~~~~~~~~~~~~~
+../CodePage2Unicode.h(1419,34): warning : comparison of unsigned expression >= 0 is always true [-Wtautological-compare]
+          bool bRet = (((charUtf32 >= UNICODE_MINIMUM) && (charUtf32 <= 0x001FUL)) ||
+                         ~~~~~~~~~ ^  ~~~~~~~~~~~~~~~
+../CodePage2Unicode.h(1511,28): warning : equality comparison with extraneous parentheses [-Wparentheses-equality]
+          else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+                   ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ../CodePage2Unicode.h(1511,28) :  note: remove extraneous parentheses around the comparison to silence this warning
+          else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+                  ~          ^                                 ~
+  ../CodePage2Unicode.h(1511,28) :  note: use '=' to turn this equality comparison into an assignment
+          else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+                             ^~
+                             =
+  4 warnings generated.
   CodePage2Unicode.vcxproj -> C:\Users\JCaetano\Documents\My Source Code\C e C++\ANSI\CodePage2Unicode\VS2015\Debug\CodePage2Unicode.exe

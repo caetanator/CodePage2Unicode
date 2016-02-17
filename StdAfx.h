@@ -137,7 +137,7 @@
 #   undef ___MY_ERRASE_GNU_SOURCE
 #endif
 
-#if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__)
+#if defined(_WIN32) || defined(_WIN64) || defined(_WIN32_WCE) || defined(__CYGWIN__) || defined(__MINGW32__) || defined(__MINGW64__)
     // Windows Specific
 #   include "Windows/TargetVer.h"
     // Windows Header Files

@@ -33,7 +33,7 @@
  * __COMPILER_TYPE_MSVC     -> Microsoft Visual C++
  * __COMPILER_TYPE_MINGW    -> MinGW
  * __COMPILER_TYPE_GCC      -> GNU Compiler Collection
- * __COMPILER_TYPE_CLANG    -> CLang
+ * __COMPILER_TYPE_CLANG    -> CLang/LLVM
  * __COMPILER_VERSION_MAJOR	-> Compiler major version
  * __COMPILER_VERSION_MINOR	-> Compiler minor version
  * __COMPILER_VERSION_BUILD	-> Compiler build version
@@ -49,7 +49,7 @@
 	(__COMPILER_TYPE == __COMPILER_TYPE_MSVC) ? _T("Microsoft Visual C++") : ( 		\
 	(__COMPILER_TYPE == __COMPILER_TYPE_MINGW) ? _T("MinGW") : ( 					\
 	(__COMPILER_TYPE == __COMPILER_TYPE_GCC) ? _T("GNU Compiler Collection") : ( 	\
-	(__COMPILER_TYPE == __COMPILER_TYPE_CLANG) ? _T("LLVM Clang") : (				\
+	(__COMPILER_TYPE == __COMPILER_TYPE_CLANG) ? _T("Clang/LLVM") : (				\
 	_T("Unknown")))))																\
 )
 
@@ -113,7 +113,8 @@
 #define __COMPILER_PLATFORM_SUBTYPE_WINDOWS_CE_NET  15
 #define __COMPILER_PLATFORM_SUBTYPE_MINGW_32        16
 #define __COMPILER_PLATFORM_SUBTYPE_MINGW_64        17
-#define __COMPILER_PLATFORM_SUBTYPE_WINDOWS_RT      18
+#define __COMPILER_PLATFORM_SUBTYPE_CYGWIN			18
+#define __COMPILER_PLATFORM_SUBTYPE_WINDOWS_RT      19
 #define __COMPILER_PLATFORM_SUBTYPE_LINUX_32        21
 #define __COMPILER_PLATFORM_SUBTYPE_LINUX_64        22
 #define __COMPILER_PLATFORM_SUBTYPE_MACOS_32        31
@@ -134,6 +135,7 @@
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_RT) ? _T("WinRT") : (					\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MINGW_32) ? _T("MinGW32") : ( 					\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MINGW_64) ? _T("MinGW64") : (					\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_CYGWIN) ? _T("CygWin") : ( 						\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_LINUX_32) ? _T("Linux32") : ( 					\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_LINUX_64) ? _T("Linux64") : (					\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_32) ? _T("MacOS32") : (					\
@@ -145,7 +147,7 @@
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_NETBSD_64) ? _T("NetBSD64") : (				\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_32) ? _T("OpenBSD32") : (			\
 	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_64) ? _T("OpenBSD64") : (			\
-	_T("Unknown"))))))))))))))))))))																			\
+	_T("Unknown")))))))))))))))))))))																			\
 )
 
 // Machine CPU family
@@ -221,7 +223,7 @@
 )
 
 /* Detect the OS platform */
-#if defined(_WINDOWS) || (defined(WINVER) && (WINVER <= 0x030A))
+#if defined(_WIN16) || defined(_WINDOWS) || (defined(WINVER) && (WINVER <= 0x030A))
     // Windows 16-bit
 #error "ups"
 #   define __COMPILER_PLATFORM_TYPE     __COMPILER_PLATFORM_TYPE_WINDOWS
@@ -253,7 +255,11 @@
 #elif defined(__MINGW32__)
     // Windows x86
 #       define __COMPILER_PLATFORM_TYPE     __COMPILER_PLATFORM_TYPE_WINDOWS
-#       define __COMPILER_PLATFORM_SUBTYPE  __COMPILER_PLATFORM_SUBTYPE_MINGW32
+#       define __COMPILER_PLATFORM_SUBTYPE  __COMPILER_PLATFORM_SUBTYPE_MINGW_32
+#elif defined(__CYGWIN__)
+// Windows x86
+#       define __COMPILER_PLATFORM_TYPE     __COMPILER_PLATFORM_TYPE_WINDOWS
+#       define __COMPILER_PLATFORM_SUBTYPE  __COMPILER_PLATFORM_SUBTYPE_CYGWIN
 #elif defined(__linux__) || defined(__linux) || defined(linux)
     // Linux
 #   define __COMPILER_PLATFORM_TYPE     __COMPILER_PLATFORM_TYPE_LINUX
@@ -323,7 +329,7 @@
 #   define __COMPILER_VERSION_MAJOR (__clang_major__)
 #   define __COMPILER_VERSION_MINOR (__clang_minor__)
 #   define __COMPILER_VERSION_BUILD (0)
-#   define __COMPILER_VERSION_PATCH (__clang_patch__)
+#   define __COMPILER_VERSION_PATCH (__clang_patchlevel__)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
 #elif defined(__GNUC__)
     // GCC compiler detected
