@@ -18,6 +18,27 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Source\LICENSE" />
+    <None Include="..\Source\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Source\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\CodePage2Unicode.cpp" />
+    <ClCompile Include="..\Source\main.cpp" />
+    <ClCompile Include="..\Source\StdAfx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\Include\CodePage2Unicode.h" />
+    <ClInclude Include="..\Source\Include\CompilerConfig.h" />
+    <ClInclude Include="..\Source\Include\CompilerEnvironment.h" />
+    <ClInclude Include="..\Source\Include\CompilerInfo.h" />
+    <ClInclude Include="..\Source\Include\StdAfx.h" />
+    <ClInclude Include="..\Source\Include\ThirdParty\Boost\include\cpp_feature.h" />
+    <ClInclude Include="..\Source\Include\Windows\TargetVer.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AE1C92CB-5282-4DCB-BAA0-AB5EE2AD2690}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -149,32 +170,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="..\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\CodePage2Unicode.h" />
-    <ClInclude Include="..\CompilerConfig.h" />
-    <ClInclude Include="..\CompilerEnvironment.h" />
-    <ClInclude Include="..\CompilerInfo.h" />
-    <ClInclude Include="..\StdAfx.h" />
-    <ClInclude Include="..\ThirdParty\Boost\include\cpp_feature.h" />
-    <ClInclude Include="..\Windows\TargetVer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\CodePage2Unicode.cpp" />
-    <ClCompile Include="..\main.cpp" />
-    <ClCompile Include="..\StdAfx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\LICENSE" />
-    <None Include="..\README.md" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
