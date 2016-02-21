@@ -184,6 +184,23 @@
 #define __COMPILER_CPU_FAMILY_SPARC_64      764
 #define __COMPILER_CPU_FAMILY_ARM_32        832
 #define __COMPILER_CPU_FAMILY_ARM_64        864
+#define __COMPILER_CPU_FAMILY_STRING	(																	\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA16) ? _T("Intel x86 - 16-Bit") : (					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA32) ? _T("Intel x86 - IA32") : ( 					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA64) ? _T("Intel Itanium - IA64") : ( 					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_AMD_64) ? _T("AMD x64 / Intel EM64T") : (					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_32) ? _T("MIPS 32-bit") : (			\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_64) ? _T("MIPS 64-bit") : (					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_32) ? _T("DEC Alpha 32-bit") : ( 					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_64) ? _T("DEC Alpha 64-bit") : (					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_PPC_32) ? _T("Motorola PowerPC 32-bit") : ( 						\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_PPC_64) ? _T("Motorola PowerPC 64-bit") : ( 					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_SPARC_32) ? _T("Sun/Oracle Sparc 32-bit") : (					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_SPARC_64) ? _T("Sun/Oracle Sparc 64-bit") : (					\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ARM_32) ? _T("ARM 32-bit") : (				\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ARM_64) ? _T("ARM 64-bit") : (				\
+	_T("Unknown")))))))))))))))																			\
+)
 
 // Machine CPU bits
 /*

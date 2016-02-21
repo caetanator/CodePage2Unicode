@@ -1404,7 +1404,7 @@ u32string CodePage2Unicode::convertStringUtf16_to_StringUtf32(const u16string& u
         }
 
         // Check if UTF-32 code point is valid
-        if(!isUnicodeInterchangeCharacter(codeUnits[0]) && !isUtf16Surrogate(codeUnits[0]))
+        if(!isUnicodeInterchangeCharacter(codeUnits[0]) && !isUtf16Surrogate((char16_t)codeUnits[0]))
         {
             if(strictConversion)
             {
@@ -1661,6 +1661,8 @@ string CodePage2Unicode::convertStringUtf32_to_StringUtf8(const u32string& utf32
         {
             // Invalid UTF-8 code unit
             throw;
+			// Remove unreferenced local variable warning
+			ex;
         }
         catch(...)
         {
@@ -1785,7 +1787,7 @@ u32string CodePage2Unicode::convertStringUtf8_to_StringUtf32(const string& utf8S
             }
 
             // Check if UTF-32 code point is valid
-            if(!isUnicodeInterchangeCharacter(codeUnits[0]) && !isUtf16Surrogate(codeUnits[0]))
+            if(!isUnicodeInterchangeCharacter(codeUnits[0]) && !isUtf16Surrogate((char16_t)codeUnits[0]))
             {
                 if(strictConversion)
                 {
@@ -1804,6 +1806,8 @@ u32string CodePage2Unicode::convertStringUtf8_to_StringUtf32(const string& utf8S
         {
             // Invalid UTF-8 code unit
             throw;
+			// Remove unreferenced local variable warning
+			ex;
         }
         catch(...)
         {

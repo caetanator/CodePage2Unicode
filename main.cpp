@@ -175,7 +175,7 @@ int main(void)
 	wcout << L"Run Plataform & Compiler Info:" << endl;
 	wcout << L"\tCompiler Type:     " << (__COMPILER_TYPE_STRING) << endl;
 	wcout << L"\tCompiler Version:  " << __COMPILER_VERSION_MAJOR << L'.' << __COMPILER_VERSION_MINOR << L'.' << __COMPILER_VERSION_PATCH << L'.' << __COMPILER_VERSION_BUILD << endl;
-	wcout << L"\tCPU Family:        " << __COMPILER_CPU_FAMILY << endl;
+	wcout << L"\tCPU Family:        " << (__COMPILER_CPU_FAMILY_STRING) << endl;
 	wcout << L"\tCPU bits:          " << __COMPILER_CPU_BITS << L"-bit" << endl;
 	wcout << L"\tCPU Byte Order:    " << (__COMPILER_CPU_BYTE_ORDER_STRING) << endl;
 	wcout << L"\tPlatform Type:     " << (__COMPILER_PLATFORM_TYPE_STRING) << endl;

@@ -150,6 +150,7 @@
 #   include <strsafe.h>
 #   include <fcntl.h>
 #   include <io.h>
+#   include <richedit.h>
 #   define __HAS_INCLUDE_WINDOWS
 #else
     // POSIX Specific
