@@ -73,14 +73,14 @@
 #define __COMPILER_PLATFORM_TYPE_UNIX       4
 #define __COMPILER_PLATFORM_TYPE_POSIX      5
 #define __COMPILER_PLATFORM_TYPE_BSD        6
-#define __COMPILER_PLATFORM_TYPE_STRING	(														\
+#define __COMPILER_PLATFORM_TYPE_STRING	(														 \
 	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_WINDOWS) ? _T("Microsoft Windows") : ( \
-	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_LINUX) ? _T("Linux") : ( 				\
-	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_MACOS) ? _T("Apple MacOS") : ( 		\
-	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_BSD) ? _T("BSD") : (					\
-	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_UNIX) ? _T("UNIX") : ( 				\
-	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_POSIX) ? _T("POSIX") : (				\
-	_T("Unknown")))))))																			\
+	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_LINUX) ? _T("Linux") : ( 				 \
+	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_MACOS) ? _T("Apple MacOS") : ( 		 \
+	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_BSD) ? _T("BSD") : (					 \
+	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_UNIX) ? _T("UNIX") : ( 				 \
+	(__COMPILER_PLATFORM_TYPE == __COMPILER_PLATFORM_TYPE_POSIX) ? _T("POSIX") : (				 \
+	_T("Unknown")))))))																			 \
 )
 
 // Machine platform hardware
@@ -126,28 +126,28 @@
 #define __COMPILER_PLATFORM_SUBTYPE_BSD_NETBSD_64   64
 #define __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_32  65
 #define __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_64  66
-#define __COMPILER_PLATFORM_SUBTYPE_STRING	(																	\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_16) ? _T("Win16") : (					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_32) ? _T("Win32") : ( 					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_64) ? _T("Win64") : ( 					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_CE) ? _T("WinCE") : (					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_CE_NET) ? _T("WinCE .NET") : (			\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_RT) ? _T("WinRT") : (					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MINGW_32) ? _T("MinGW32") : ( 					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MINGW_64) ? _T("MinGW64") : (					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_CYGWIN) ? _T("CygWin") : ( 						\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_LINUX_32) ? _T("Linux32") : ( 					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_LINUX_64) ? _T("Linux64") : (					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_32) ? _T("MacOS32") : (					\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_X_32) ? _T("MacOS_X32") : (				\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_X_64) ? _T("MacOS_X64") : (				\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_FREEBSD_32) ? _T("FreeBSD32") : (			\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_FREEBSD_64) ? _T("FreeBSD64") : (			\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_NETBSD_32) ? _T("NetBSD32") : (				\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_NETBSD_64) ? _T("NetBSD64") : (				\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_32) ? _T("OpenBSD32") : (			\
-	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_64) ? _T("OpenBSD64") : (			\
-	_T("Unknown")))))))))))))))))))))																			\
+#define __COMPILER_PLATFORM_SUBTYPE_STRING	(															\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_16) ? _T("Win16") : (			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_32) ? _T("Win32") : ( 			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_64) ? _T("Win64") : ( 			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_CE) ? _T("WinCE") : (			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_CE_NET) ? _T("WinCE .NET") : (  \
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_WINDOWS_RT) ? _T("WinRT") : (			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MINGW_32) ? _T("MinGW32") : ( 			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MINGW_64) ? _T("MinGW64") : (			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_CYGWIN) ? _T("CygWin") : ( 				\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_LINUX_32) ? _T("Linux32") : ( 			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_LINUX_64) ? _T("Linux64") : (			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_32) ? _T("MacOS32") : (			\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_X_32) ? _T("MacOS_X32") : (		\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_MACOS_X_64) ? _T("MacOS_X64") : (		\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_FREEBSD_32) ? _T("FreeBSD32") : (	\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_FREEBSD_64) ? _T("FreeBSD64") : (	\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_NETBSD_32) ? _T("NetBSD32") : (		\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_NETBSD_64) ? _T("NetBSD64") : (		\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_32) ? _T("OpenBSD32") : (	\
+	(__COMPILER_PLATFORM_SUBTYPE == __COMPILER_PLATFORM_SUBTYPE_BSD_OPENBSD_64) ? _T("OpenBSD64") : (	\
+	_T("Unknown")))))))))))))))))))))																	\
 )
 
 // Machine CPU family
@@ -184,22 +184,22 @@
 #define __COMPILER_CPU_FAMILY_SPARC_64      764
 #define __COMPILER_CPU_FAMILY_ARM_32        832
 #define __COMPILER_CPU_FAMILY_ARM_64        864
-#define __COMPILER_CPU_FAMILY_STRING	(																	\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA16) ? _T("Intel x86 - 16-Bit") : (					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA32) ? _T("Intel x86 - IA32") : ( 					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA64) ? _T("Intel Itanium - IA64") : ( 					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_AMD_64) ? _T("AMD x64 / Intel EM64T") : (					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_32) ? _T("MIPS 32-bit") : (			\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_64) ? _T("MIPS 64-bit") : (					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_32) ? _T("DEC Alpha 32-bit") : ( 					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_64) ? _T("DEC Alpha 64-bit") : (					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_PPC_32) ? _T("Motorola PowerPC 32-bit") : ( 						\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_PPC_64) ? _T("Motorola PowerPC 64-bit") : ( 					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_SPARC_32) ? _T("Sun/Oracle Sparc 32-bit") : (					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_SPARC_64) ? _T("Sun/Oracle Sparc 64-bit") : (					\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ARM_32) ? _T("ARM 32-bit") : (				\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ARM_64) ? _T("ARM 64-bit") : (				\
-	_T("Unknown")))))))))))))))																			\
+#define __COMPILER_CPU_FAMILY_STRING	(															\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA16) ? _T("Intel x86 - 16-Bit") : (		\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA32) ? _T("Intel x86 - IA-32") : ( 		\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA64) ? _T("Intel Itanium - IA-64") : ( 	\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_AMD_64) ? _T("AMD x64 / Intel EM64T") : (		\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_32) ? _T("MIPS 32-bit") : (			    \
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_64) ? _T("MIPS 64-bit") : (				\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_32) ? _T("DEC Alpha 32-bit") : ( 			\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_64) ? _T("DEC Alpha 64-bit") : (			\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_PPC_32) ? _T("IBM/Motorola PowerPC 32-bit") : ( \
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_PPC_64) ? _T("IBM/Motorola PowerPC 64-bit") : ( \
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_SPARC_32) ? _T("Oracle/Sun SPARC 32-bit") : (	\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_SPARC_64) ? _T("Oracle/Sun SPARC 64-bit") : (	\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ARM_32) ? _T("ARM 32-bit") : (				    \
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ARM_64) ? _T("ARM 64-bit") : (				    \
+	_T("Unknown")))))))))))))))																		\
 )
 
 // Machine CPU bits
@@ -231,12 +231,12 @@
 #define __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN        4321
 #define __COMPILER_CPU_BYTE_ORDER_WSLE_ENDIAN       2143
 #define __COMPILER_CPU_BYTE_ORDER_WSBE_ENDIAN       3412
-#define __COMPILER_CPU_BYTE_ORDER_STRING	(														\
+#define __COMPILER_CPU_BYTE_ORDER_STRING	(														 \
 	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_LITTLE_ENDIAN) ? _T("Little-Endian") : ( \
-	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN) ? _T("Big-Endian") : ( 		\
-	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_WSLE_ENDIAN) ? _T("WSLE-Endian") : ( 	\
-	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_WSBE_ENDIAN) ? _T("WSBE-Endian") : (	\
-	_T("Unknown")))))																				\
+	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN) ? _T("Big-Endian") : ( 		 \
+	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_WSLE_ENDIAN) ? _T("WSLE-Endian") : ( 	 \
+	(__COMPILER_CPU_BYTE_ORDER == __COMPILER_CPU_BYTE_ORDER_WSBE_ENDIAN) ? _T("WSBE-Endian") : (	 \
+	_T("Unknown")))))																				 \
 )
 
 /* Detect the OS platform */
@@ -415,18 +415,18 @@
         // Machine is big endian bit order
 #       define __COMPILER_CPU_BYTE_ORDER __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN
 #   endif
-#elif   defined(__sparc) || defined(__sparc__) || \
-        defined(_POWER) || defined(__hppa) || \
-        defined(_MIPSEB) || defined(__ARMEB__) || \
-        defined(__s390__) || defined(__AARCH64EB__) || \
+#elif   defined(__sparc) || defined(__sparc__) ||           \
+        defined(_POWER) || defined(__hppa) ||               \
+        defined(_MIPSEB) || defined(__ARMEB__) ||           \
+        defined(__s390__) || defined(__AARCH64EB__) ||      \
         (defined(__sh__) && !defined(__LITTLE_ENDIAN__)) || \
         (defined(__ia64) && defined(__BIG_ENDIAN__))
     // Machine is big endian bit order
 #   define __COMPILER_CPU_BYTE_ORDER __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN
-#elif   defined(__i386) || defined(__i386__) || \
-        defined(__x86_64) || defined(__x86_64__) || \
-        defined(_MIPSEL) || defined(__ARMEL__) || \
-        defined(__alpha__) || defined(__AARCH64EL__) || \
+#elif   defined(__i386) || defined(__i386__) ||          \
+        defined(__x86_64) || defined(__x86_64__) ||      \
+        defined(_MIPSEL) || defined(__ARMEL__) ||        \
+        defined(__alpha__) || defined(__AARCH64EL__) ||  \
         (defined(__sh__) && !defined(__BIG_ENDIAN__)) || \
         (defined(__ia64) && defined(__LITTLE_ENDIAN__))
     // Machine is little endian bit order
