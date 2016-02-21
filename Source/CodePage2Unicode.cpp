@@ -23,9 +23,9 @@
  
 // http://www.tutorialspoint.com/compile_cpp11_online.php
 
-#include "StdAfx.h"
+#include "Include/StdAfx.h"
 
-#include "CodePage2Unicode.h"
+#include "Include/CodePage2Unicode.h"
 
 using namespace std;
 

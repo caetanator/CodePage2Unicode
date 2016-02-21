@@ -29,9 +29,9 @@
 // http://codepage-encoding.online-domain-tools.com/
 // ================================
 
-#include "StdAfx.h"
+#include "Include/StdAfx.h"
 
-#include "CodePage2Unicode.h"
+#include "Include/CodePage2Unicode.h"
 
 using namespace std;
 
