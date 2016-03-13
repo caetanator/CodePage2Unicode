@@ -1,24 +1,25 @@
 /**
  * CompilerConfig.h
  *
- * ABSTRACT
+ * ABSTRACT:
  *  Include file for  fixing compiler related differences.
  *
- * CONTACTS
+ * CONTACTS:
  *  E-mail regarding any portion of the "CodePage2Unicode" project:
  *      José Caetano Silva, jcaetano@users.sourceforge.net
  *
- * COPYRIGHT
+ * COPYRIGHT:
  *  This file is distributed under the terms of the GNU General Public
  *  License (GPL) v3. Copies of the GPL can be obtained from:
  *      ftp://prep.ai.mit.edu/pub/gnu/GPL
  *  Each contributing author retains all rights to their own work.
  *
- *  (C) 20011 - 20015   José Caetano Silva
+ *  (C) 20011 - 20016   José Caetano Silva
  *
- * HISTORY
+ * HISTORY:
  *  2013-01-11: Created.
  *  2015-07-17: Fixed typos.
+ *  2016-03-12: Fixed typos and coments.
  */
 
 #ifndef __COMPILERCONFIG_H_
@@ -27,8 +28,12 @@
 #pragma once
 
 
-// M_PI, M_E, etc. may not be defined in <math.h> and <cmath> because is not part of C/c++standards
-/* For use with 'double'. Provide enough digits for the 64-bit IEEE 754 double precision. */
+/**
+ * Macros like M_PI, M_E, etc. may not be defined in <math.h> and <cmath>,
+ * because are not part of the C and C++ standards.
+ */
+// For use with 'double'
+// Provide enough digits for the 64-bit IEEE 754 double precision
 #if !defined(M_E) || !defined(M_PI)
 # define M_E            2.7182818284590452354         /* e */
 # define M_LOG2E        1.4426950408889634074         /* log_2 e */
@@ -44,7 +49,9 @@
 # define M_SQRT2        1.41421356237309504880        /* sqrt(2) */
 # define M_SQRT1_2      0.70710678118654752440        /* 1/sqrt(2) */
 #endif
-/* For use with 'long double'. Provide enough digits for the 80/96-bit IEEE 754 extended precision and 128-bit IEEE 754 quadruple precision. */
+// For use with 'long double'
+// Provide enough digits for the 80/96-bit IEEE 754 extended precision
+// and 128-bit IEEE 754 quadruple precision.
 #if !defined(M_El) || !defined(M_PIl)
 # define M_El            2.7182818284590452353602874713526625l  /* e */
 # define M_LOG2El        1.4426950408889634073599246810018921l  /* log_2 e */
@@ -61,10 +68,13 @@
 # define M_SQRT1_2l      0.7071067811865475244008443621048490l  /* 1/sqrt(2) */
 #endif
 
-// _TCHAR may not be defined in <tchar.h> because this header is Windows specific
+/**
+ * The _TCHAR and _MBCS macros and some ASCII char/MBCS/Unicode isolation functions defined in
+ * <tchar.h> and <mbstring.h>  may not be implented, because this headers are Windows specific.
+ */
 #ifndef _TCHAR
     #if defined _UNICODE
-			// Standard C wide character/string functions
+			// Standard C wide character/string functions (Unicode API)
             #define _TCHAR      wchar_t
 			#if !defined _T
 				#define _T(quote)   L##quote
@@ -112,7 +122,7 @@
 				#define _tgetenv    wgetenv
 			#endif
 	#elif defined(_MBCS)
-		// Standard C Multi-Byte character/string functions
+		// Standard C Multi-Byte character/string functions (MBCS API)
         #define _TCHAR      char
 		#if !defined _T
 				#define _T(quote)   quote
@@ -160,7 +170,7 @@
 				#define _tgetenv    getenv
 			#endif
     #else
-			// Standard C narrow character/string functions
+			// Standard C narrow character/string functions (ASCII API)
 			#define _TCHAR      char
 			#if !defined _T
 				#define _T(quote)   quote
@@ -210,7 +220,10 @@
     #endif
 #endif
 
-// These abstracts from the ASCII narrow char/UNICODE wide char C++ file streams and strings
+/**
+ * These macros abstracts from the ASCII narrow/MBCS/Unicode wide character
+ * and string C++ file streams and strings classes.
+ */
 #if defined _UNICODE
 	// Standard C++ wide character streams
 	#define _tistream	std::wistream

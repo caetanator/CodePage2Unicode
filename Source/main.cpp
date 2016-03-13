@@ -172,9 +172,11 @@ int main(void)
 	CodePage2Unicode * objString = new CodePage2Unicode();
 
 	wcout << endl;
-	wcout << L"Run Plataform & Compiler Info:" << endl;
+	wcout << L"Plataform & Compiler Info:" << endl;
 	wcout << L"\tCompiler Type:     " << (__COMPILER_TYPE_STRING) << endl;
 	wcout << L"\tCompiler Version:  " << __COMPILER_VERSION_MAJOR << L'.' << __COMPILER_VERSION_MINOR << L'.' << __COMPILER_VERSION_PATCH << L'.' << __COMPILER_VERSION_BUILD << endl;
+	wcout << L"\tCompiler Toolset:  " << (__COMPILER_TOOLSET_STRING) << endl;
+	wcout << L"\tCompiler Language: " << (__COMPILER_LANGUAGE_STANDARD_STRING) << L" standard" << endl;
 	wcout << L"\tCPU Family:        " << (__COMPILER_CPU_FAMILY_STRING) << endl;
 	wcout << L"\tCPU bits:          " << __COMPILER_CPU_BITS << L"-bit" << endl;
 	wcout << L"\tCPU Byte Order:    " << (__COMPILER_CPU_BYTE_ORDER_STRING) << endl;
@@ -202,7 +204,7 @@ int main(void)
 	wcout << L"\tIs Application API UTF-8:   " << objString->isApplicationApiNarrowUtf8() << endl;
 	wcout << L"\tIs Application API ASCII:   " << objString->isApplicationApiNarrowAscii() << endl;
 	wcout << L"\tIs Application API MBCS:    " << objString->isApplicationApiMbcs() << endl;
-	wcout << L"\tNarrow 'char' Code Page:    " << (uint32_t)objString->getDefaultNarrowCodePage() << endl;
+	wcout << L"\tNarrow 'char' Code Page:    " << ((uint32_t)objString->getDefaultNarrowCodePage()) << endl;
 	wcout << noboolalpha;
 
 	wcout << endl;

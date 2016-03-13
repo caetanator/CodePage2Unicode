@@ -1508,7 +1508,7 @@ public:
         {
             bRet = true;
         }
-        else if((_charUtf8 == (unsigned char)UTF8_LEAD_BYTES6))
+        else if(_charUtf8 == ((unsigned char)UTF8_LEAD_BYTES6))
         {
             bRet = true;
         }
