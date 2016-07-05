@@ -127,7 +127,7 @@
 #define __COMPILER_TOOLSET_CLANG			301
 #define __COMPILER_TOOLSET_BORLAND_TC		401
 #define __COMPILER_TOOLSET_BORLAND_CPP		402
-#define __COMPILER_TOOLSET_STRING	(																			\
+#define __COMPILER_TOOLSET_STRING	(																		\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_MSVC) ? _T("Microsoft Visual C++ C1xx/C2") : ( 				\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_MSVC_CLANG_LLVM) ? _T("Microsoft Visual C++ CLang/LLVM") : (	\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_MSVC_CLANG_C2) ? _T("Microsoft Visual C++ CLang/C2") : ( 		\
@@ -137,7 +137,7 @@
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_CLANG) ? _T("CLang/LLVM") : (									\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_BORLAND_TC) ? _T("Borland Turbo C") : ( 						\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_BORLAND_CPP ? _T("Borland C++") : (							\
-	_T("Unknown"))))))))))																					\
+	_T("Unknown")))))))))))																					\
 )
 
 
