@@ -40,7 +40,7 @@
  * __COMPILER_LANGUAGE_STANDARD_C1994	-> C95  (C90 + Normative Amendment 1) - ISO/IEC 9899-1:1994
  * __COMPILER_LANGUAGE_STANDARD_C1995	-> C95  (C90 + Normative Amendment 1) - ISO/IEC 9899/AMD1:1995
  * __COMPILER_LANGUAGE_STANDARD_C1999	-> C99 - ISO/IEC 9899:1999
- * __COMPILER_LANGUAGE_STANDARD_C2011	-> C11 - ISO/IEC 9899:2011 
+ * __COMPILER_LANGUAGE_STANDARD_C2011	-> C11 - ISO/IEC 9899:2011
  * __COMPILER_LANGUAGE_STANDARD_CPP1998	-> C++98 - ISO/IEC 14882:1998
  * __COMPILER_LANGUAGE_STANDARD_CPP2011	-> C++11 - ISO/IEC 14882:2011
  * __COMPILER_LANGUAGE_STANDARD_CPP2014	-> C++14 - ISO/IEC 14882:2014
@@ -65,7 +65,7 @@
 	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_C1999) ? _T("ISO C99") : ( 								\
 	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_CPP2011) ? _T("ISO C++11") : (							\
 	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_C2011) ? _T("ISO C11") : (								\
-	(__COMPILER_LANGUAGE_STANDARD == __COMPILER_LANGUAGE_STANDARD_CPP2014) ? _T("ISO C++11") : ( 							\
+	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_CPP2014) ? _T("ISO C++11") : ( 							\
 	(__COMPILER_LANGUAGE_STANDARD == __COMPILER_LANGUAGE_STANDARD_CPP2017) ? _T("ISO C++17/C++1z") : (						\
 	_T("Unknown")))))))))																									\
 )
@@ -73,7 +73,7 @@
 
 /**
  * These macros are for detect the machine compiler type.
- * 
+ *
  * __COMPILER_TYPE is set as follows:
  *
  * __COMPILER_TYPE_UNKNOWN  -> Unknown
@@ -136,16 +136,16 @@
     (__COMPILER_TOOLSET == __COMPILER_TOOLSET_GCC_CYGWIN) ? _T("CygWin") : ( 								\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_CLANG) ? _T("CLang/LLVM") : (									\
 	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_BORLAND_TC) ? _T("Borland Turbo C") : ( 						\
-	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_BORLAND_TC) ? _T("Borland C++") : (					\
+	(__COMPILER_TOOLSET == __COMPILER_TOOLSET_BORLAND_CPP ? _T("Borland C++") : (							\
 	_T("Unknown"))))))))))																					\
 )
 
 
 /**
  * These macros are for detect the machine platform OS type.
- * 
+ *
  * __COMPILER_PLATFORM_TYPE is set as follows:
- * 
+ *
  * __COMPILER_PLATFORM_TYPE_UNKNOWN     -> Unknown
  * __COMPILER_PLATFORM_TYPE_DOS         -> DOS
  * __COMPILER_PLATFORM_TYPE_WINDOWS     -> Windows
@@ -179,9 +179,9 @@
 
 /**
  *  These macros are for detect the machine platform OS hardware.
- * 
+ *
  * __COMPILER_PLATFORM_SUBTYPE is set as follows:
- * 
+ *
  * __COMPILER_PLATFORM_SUBTYPE_UNKNOWN			-> Unknown
  * __COMPILER_PLATFORM_SUBTYPE_DOS_16		    -> DOS 16-bit
  * __COMPILER_PLATFORM_SUBTYPE_WINDOWS_CE		-> Windows CE 32-bit
@@ -258,9 +258,9 @@
 
 /**
  *  These macros are for detect the machine CPU family´.
- * 
+ *
  * __COMPILER_CPU_FAMILY is set as follows:
- * 
+ *
  * __COMPILER_CPU_FAMILY_UNKNOWN	-> Unknown
  * __COMPILER_CPU_FAMILY_INTEL_IA16	-> IA16 16-bit (Intel x86, 80286, 80186, ...)
  * __COMPILER_CPU_FAMILY_INTEL_IA32	-> IA32 32-bit (Intel x86, 80386, 80486, Pentium, P4; AMD; Cytrix; ...)
@@ -313,9 +313,9 @@
 
 /**
  *  These macros are for detect the machine CPU bits.
- * 
+ *
  * __COMPILER_CPU_BITS is set as follows:
- * 
+ *
  * __COMPILER_CPU_BITS_UNKNOWN	-> Unknown
  * __COMPILER_CPU_BITS_16		-> 16-bit
  * __COMPILER_CPU_BITS_32		-> 32-bit
@@ -329,9 +329,9 @@
 
 /**
  *  These macros are for detect the machine CPU byte order endianness.
- * 
+ *
  * __COMPILER_CPU_BYTE_ORDER is set as follows:
- * 
+ *
  * __COMPILER_CPU_BYTE_ORDER_UNKNOWN_ENDIAN	-> Unknown
  * __COMPILER_CPU_BYTE_ORDER_LITTLE_ENDIAN	-> Little Endian (Intel x86, AMD x64)
  * __COMPILER_CPU_BYTE_ORDER_BIG_ENDIAN		-> Big Endian (SPARC, PowerPC)
@@ -461,7 +461,7 @@
 #   define __COMPILER_PLATFORM_SUBTYPE  __COMPILER_PLATFORM_SUBTYPE_UNKNOWN
 /*
 	Name			Macro						Standard
-	POSIX.1-1988	_POSIX_VERSION = 198808L	
+	POSIX.1-1988	_POSIX_VERSION = 198808L
 	POSIX.1-1990	_POSIX_VERSION = 199009L	ISO/IEC 9945-1:1990
 	POSIX.2			_POSIX2_C_VERSION = 199209L	ISO/IEC 9945-2:1993
 	POSIX.1b-1993	_POSIX_VERSION = 199309L	IEEE 1003.1b-1993
@@ -510,21 +510,69 @@
 #   define __COMPILER_VERSION_BUILD (0)
 #   define __COMPILER_VERSION_PATCH (__GNUC_PATCHLEVEL__)
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
-#elif defined(__BORLANDC__)
+#elif defined(__BORLANDC__) || defined(__CODEGEARC__)
  // Borland C++ compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_BORLAND
-#   define __COMPILER_VERSION_MAJOR (__BORLANDC__ / 100)
-#   define __COMPILER_VERSION_MINOR (__BORLANDC__ - (__COMPILER_VERSION_MAJOR * 100))
-#   define __COMPILER_VERSION_BUILD (0)
-#   define __COMPILER_VERSION_PATCH (0)
+#	if (__BORLANDC__ == 0x200)
+#   	define __COMPILER_VERSION_MAJOR (2)
+#   	define __COMPILER_VERSION_MINOR (0)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__BORLANDC__ == 0x400)
+#   	define __COMPILER_VERSION_MAJOR (3)
+#   	define __COMPILER_VERSION_MINOR (0)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__BORLANDC__ == 0x410)
+#   	define __COMPILER_VERSION_MAJOR (3)
+#   	define __COMPILER_VERSION_MINOR (1)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__BORLANDC__ == 0x452)
+#   	define __COMPILER_VERSION_MAJOR (4)
+#   	define __COMPILER_VERSION_MINOR (0)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__BORLANDC__ == 0x500)
+#   	define __COMPILER_VERSION_MAJOR (5)
+#   	define __COMPILER_VERSION_MINOR (0)
+#   	define __COMPILER_VERSION_BUILD (0)
+#	else
+#   	define __COMPILER_VERSION_MAJOR (__BORLANDC__ / 100)
+#   	define __COMPILER_VERSION_MINOR (__BORLANDC__ - (__COMPILER_VERSION_MAJOR * 100))
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	endif
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
 #elif defined(__TURBOC__)
 // Borland Turbo C compiler detected
 #   define __COMPILER_TYPE          __COMPILER_TYPE_BORLAND
-#   define __COMPILER_VERSION_MAJOR (__TURBOC__)
-#   define __COMPILER_VERSION_MINOR (0)
-#   define __COMPILER_VERSION_BUILD (0)
-#   define __COMPILER_VERSION_PATCH (0)
+#	if (__TURBOC__ == 0x295)
+#   	define __COMPILER_VERSION_MAJOR (1)
+#   	define __COMPILER_VERSION_MINOR (0)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__TURBOC__ == 0x296)
+#   	define __COMPILER_VERSION_MAJOR (1)
+#   	define __COMPILER_VERSION_MINOR (1)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__TURBOC__ == 0x297)
+#   	define __COMPILER_VERSION_MAJOR (2)
+#   	define __COMPILER_VERSION_MINOR (0)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	elif (__TURBOC__ == 0x201)
+#   	define __COMPILER_VERSION_MAJOR (2)
+#   	define __COMPILER_VERSION_MINOR (1)
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	else
+#   	define __COMPILER_VERSION_MAJOR (__TURBOC__ / 100)
+#   	define __COMPILER_VERSION_MINOR (__TURBOC__ - (__COMPILER_VERSION_MAJOR * 100))
+#   	define __COMPILER_VERSION_BUILD (0)
+#   	define __COMPILER_VERSION_PATCH (0)
+#	endif
 #   define __COMPILER_VERSION       ((__COMPILER_VERSION_MAJOR * 10000) + (__COMPILER_VERSION_MINOR * 100) + __COMPILER_VERSION_PATCH)
 #else
     // Unknown compiler
@@ -548,6 +596,12 @@
 #		endif
 #	else
 #		define __COMPILER_TOOLSET	__COMPILER_TOOLSET_MSVC
+#	endif
+#elif defined(__BORLANDC__) || defined(__TURBOC__) || defined(__CODEGEARC__)
+#	if defined(__BORLANDC__)
+#		define __COMPILER_TOOLSET	__COMPILER_TOOLSET_BORLAND_CPP
+#	else
+#		define __COMPILER_TOOLSET	__COMPILER_TOOLSET_BORLAND_TC
 #	endif
 #elif defined(__GNUC__)
 #	if defined(__MINGW32__) || defined(__MINGW64__)
