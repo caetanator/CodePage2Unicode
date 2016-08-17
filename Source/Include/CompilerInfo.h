@@ -65,7 +65,7 @@
 	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_C1999) ? _T("ISO C99") : ( 								\
 	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_CPP2011) ? _T("ISO C++11") : (							\
 	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_C2011) ? _T("ISO C11") : (								\
-	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_CPP2014) ? _T("ISO C++11") : ( 							\
+	(__COMPILER_LANGUAGE_STANDARD <= __COMPILER_LANGUAGE_STANDARD_CPP2014) ? _T("ISO C++14") : ( 							\
 	(__COMPILER_LANGUAGE_STANDARD == __COMPILER_LANGUAGE_STANDARD_CPP2017) ? _T("ISO C++17/C++1z") : (						\
 	_T("Unknown")))))))))																									\
 )
@@ -96,7 +96,7 @@
 	(__COMPILER_TYPE == __COMPILER_TYPE_MSVC) ? _T("Microsoft Visual C++") : ( 					\
 	(__COMPILER_TYPE == __COMPILER_TYPE_GCC) ? _T("GCC - GNU Compiler Collection") : ( 			\
 	(__COMPILER_TYPE == __COMPILER_TYPE_CLANG) ? _T("CLang/LLVM") : (							\
-	(__COMPILER_TYPE == __COMPILER_TYPE_BORLAND) ? _T("Borland C++/Turbo C") : (	\
+	(__COMPILER_TYPE == __COMPILER_TYPE_BORLAND) ? _T("Borland C++/Turbo C") : (	            \
 	_T("Unknown")))))																			\
 )
 
@@ -296,7 +296,7 @@
 	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA16) ? _T("Intel x86 - 16-Bit") : (		\
 	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA32) ? _T("Intel x86 - IA-32") : ( 		\
 	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_INTEL_IA64) ? _T("Intel Itanium - IA-64") : ( 	\
-	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_AMD_64) ? _T("AMD x64/Intel EM64T") : (		\
+	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_AMD_64) ? _T("AMD x64/Intel EM64T") : (	    	\
 	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_32) ? _T("MIPS 32-bit") : (			    \
 	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_MIPS_64) ? _T("MIPS 64-bit") : (				\
 	(__COMPILER_CPU_FAMILY == __COMPILER_CPU_FAMILY_ALPHA_32) ? _T("DEC Alpha 32-bit") : ( 			\
