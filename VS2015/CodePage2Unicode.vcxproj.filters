@@ -7,7 +7,7 @@
     </Filter>
     <Filter Include="Header Files">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
@@ -15,11 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Source\README.md" />
+    <None Include="..\README.md" />
+    <None Include="..\Source\ReadMe.txt" />
     <None Include="..\Source\LICENSE" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\Source\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\CodePage2Unicode.cpp">
@@ -48,10 +46,10 @@
     <ClInclude Include="..\Source\Include\StdAfx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Include\Windows\TargetVer.h">
+    <ClInclude Include="..\Source\Include\ThirdParty\Boost\include\cpp_feature.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Source\Include\ThirdParty\Boost\include\cpp_feature.h">
+    <ClInclude Include="..\Source\Include\Windows\TargetVer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
